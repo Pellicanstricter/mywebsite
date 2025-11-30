@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reno AI - Nathaniel Steinrueck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .case-study-hero {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .case-study-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-subtitle {
+            font-size: 1.25rem;
+            color: #94A3B8;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-meta {
+            font-size: 1rem;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title-case {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #EF4444;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .problem-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .problem-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .quote-box {
+            background: #141B2D;
+            border-left: 4px solid #10B981;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #94A3B8;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #141B2D;
+            border: 1px solid #1E293B;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #10B981;
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            color: #10B981;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .feature-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .workflow-steps {
+            background: #141B2D;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .workflow-step {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #0F172A;
+            border-left: 4px solid #10B981;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .workflow-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #10B981;
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 0.25rem;
+        }
+
+        .step-desc {
+            color: #94A3B8;
+            font-size: 0.875rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-stat {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .impact-sublabel {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #34D399;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #10B981;
+            transform: translateX(-4px);
+        }
+
+        .vision-box {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .vision-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .vision-item {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .vision-item::before {
+            content: "♥";
+            position: absolute;
+            left: 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">NS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#work" class="nav-link">Work</a></li>
+                <li><a href="index.html#writing" class="nav-link">Writing</a></li>
+                <li><a href="index.html#contact" class="nav-link cta-nav">Let's Talk</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="case-study-hero">
+            <div class="container">
+                <a href="index.html#work" class="back-link">← Back to Work</a>
+                <h1 class="case-study-title">Reno AI</h1>
+                <p class="case-study-subtitle">AI-powered room redesign with computer vision</p>
+                <p class="case-study-meta">2025</p>
+                <p class="case-study-meta">Founder — Built End-to-End • iOS App Development & Product Design</p>
+            </div>
+        </section>
+
+        <div class="case-study-content">
+            <!-- App Demo Video -->
+            <section class="content-section" style="text-align: center; margin-bottom: 3rem;">
+                <video autoplay loop muted playsinline style="width: 100%; max-width: 400px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);">
+                    <source src="images/reno-ai/app-demo.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="color: #94A3B8; margin-top: 1rem; font-style: italic;">App demo: Scan → Analyze → Redesign</p>
+            </section>
+
+            <!-- The Problem -->
+            <section class="content-section">
+                <h2 class="section-title-case">The Problem</h2>
+                <div class="problem-box">
+                    <div class="problem-title">Millions want beautiful homes—but don't know where to start</div>
+                    <p class="problem-desc">Trial-and-error rearranging, returned purchases, and endless browsing create frustration. Interior designers feel out of reach for most one-room makeovers.</p>
+                </div>
+
+                <div class="quote-box">
+                    "My partner constantly asking if we should move the couch again. We try it. It looks weird. We move it back."
+                </div>
+
+                <div class="quote-box">
+                    "We spend hours moving furniture, second-guessing layouts, and scrolling Pinterest — and still don't feel confident"
+                </div>
+
+                <p style="color: #94A3B8; line-height: 1.7; margin-top: 2rem;">
+                    Everyone wants a beautiful, functional space—but most people don't have the tools, time, or guidance to make it happen. I built Reno AI to democratize interior design through AI and computer vision.
+                </p>
+            </section>
+
+            <!-- The Solution -->
+            <section class="content-section">
+                <h2 class="section-title-case">The Solution</h2>
+                <p style="color: #94A3B8; margin-bottom: 2rem;">Reno AI is a mobile app that helps you design your space with confidence.</p>
+
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <div class="step-title">Scan your room using your smartphone</div>
+                            <div class="step-desc">Computer vision creates a 3D model instantly</div>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <div class="step-title">AI analyzes layout, lighting, and flow</div>
+                            <div class="step-desc">Get personalized design recommendations</div>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <div class="step-title">Visualize & shop recommendations</div>
+                            <div class="step-desc">AR visualization with real-time cost estimates</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- App Screenshots -->
+            <section class="content-section">
+                <h2 class="section-title-case">App in Action</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div style="text-align: center;">
+                        <img src="images/reno-ai/screenshot-3.png" alt="3D Room Scanning" style="width: 100%; max-width: 300px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+                        <p style="color: #94A3B8; margin-top: 1rem; font-weight: 600;">AI analyzing room layout</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="images/reno-ai/screenshot-4.png" alt="3D Model with Dimensions" style="width: 100%; max-width: 300px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+                        <p style="color: #94A3B8; margin-top: 1rem; font-weight: 600;">3D model with accurate dimensions</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="images/reno-ai/screenshot-2.png" alt="Design Recommendations" style="width: 100%; max-width: 300px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+                        <p style="color: #94A3B8; margin-top: 1rem; font-weight: 600;">Layout efficiency score & improvements</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="images/reno-ai/screenshot-1.png" alt="Missing Items" style="width: 100%; max-width: 300px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+                        <p style="color: #94A3B8; margin-top: 1rem; font-weight: 600;">Personalized item recommendations</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Application -->
+            <section class="content-section">
+                <h2 class="section-title-case">AI Application</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📷</div>
+                        <div class="feature-title">Room Scanning</div>
+                        <div class="feature-desc">Computer vision captures your space and generates accurate 3D models</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <div class="feature-title">Spatial Analysis</div>
+                        <div class="feature-desc">AI-driven layout optimization and design advice based on best practices</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👁️</div>
+                        <div class="feature-title">AR Visualization</div>
+                        <div class="feature-desc">See furniture and decor in your space before you buy</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-title">Cost Estimates</div>
+                        <div class="feature-desc">Real-time pricing for recommended items and design changes</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏥</div>
+                        <div class="feature-title">Future: Home Health</div>
+                        <div class="feature-desc">Detect harmful elements and boost home wellness</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛍️</div>
+                        <div class="feature-title">Shop Directly</div>
+                        <div class="feature-desc">Seamless integration with furniture retailers</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack -->
+            <section class="content-section">
+                <h2 class="section-title-case">Tech Stack</h2>
+                <div class="tech-stack">
+                    <span class="tech-badge">Swift</span>
+                    <span class="tech-badge">ARKit</span>
+                    <span class="tech-badge">RealityKit</span>
+                    <span class="tech-badge">CoreML</span>
+                    <span class="tech-badge">Computer Vision</span>
+                    <span class="tech-badge">GPT-4</span>
+                </div>
+            </section>
+
+            <!-- Market Opportunity -->
+            <section class="content-section">
+                <h2 class="section-title-case">Market Opportunity</h2>
+                <div class="impact-grid">
+                    <div class="impact-stat">
+                        <div class="impact-number">128M</div>
+                        <div class="impact-label">U.S. Homeowners</div>
+                        <div class="impact-sublabel">20M+ actively improving</div>
+                    </div>
+                    <div class="impact-stat" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);">
+                        <div class="impact-number">$463B</div>
+                        <div class="impact-label">Market Size</div>
+                        <div class="impact-sublabel">Q1 2024 renovation spend</div>
+                    </div>
+                    <div class="impact-stat" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">
+                        <div class="impact-number">$10</div>
+                        <div class="impact-label">Monthly Subscription</div>
+                        <div class="impact-sublabel">Target: Ages 25-54</div>
+                    </div>
+                </div>
+
+                <div style="background: #141B2D; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                    <h3 style="color: #10B981; margin-bottom: 1rem;">Revenue Projections</h3>
+                    <table style="width: 100%; color: #94A3B8;">
+                        <tr style="border-bottom: 1px solid #1E293B;">
+                            <th style="text-align: left; padding: 1rem; color: #F0F4F8;">Adoption Rate</th>
+                            <th style="text-align: left; padding: 1rem; color: #F0F4F8;">Users</th>
+                            <th style="text-align: right; padding: 1rem; color: #F0F4F8;">Monthly Revenue</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #1E293B;">
+                            <td style="padding: 1rem;">0.01%</td>
+                            <td style="padding: 1rem;">2,000</td>
+                            <td style="text-align: right; padding: 1rem; color: #10B981; font-weight: 700;">$20,000</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #1E293B;">
+                            <td style="padding: 1rem;">0.15%</td>
+                            <td style="padding: 1rem;">30,000</td>
+                            <td style="text-align: right; padding: 1rem; color: #10B981; font-weight: 700;">$300,000</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem;">1%</td>
+                            <td style="padding: 1rem;">200,000</td>
+                            <td style="text-align: right; padding: 1rem; color: #10B981; font-weight: 700;">$2,000,000</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Impact -->
+            <section class="content-section">
+                <h2 class="section-title-case">Impact</h2>
+                <p style="color: #94A3B8; margin-bottom: 2rem;">Reno AI brings expert-level guidance to everyone:</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-title">Wellness Focus</div>
+                        <div class="feature-desc">Supports health, aesthetics, and functionality in home design</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-title">Streamlined Process</div>
+                        <div class="feature-desc">From design concept to purchase in minutes, not weeks</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-title">Democratized Design</div>
+                        <div class="feature-desc">Makes professional interior design accessible to everyone</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vision -->
+            <section class="content-section">
+                <div class="vision-box">
+                    <h2 class="vision-title">Making Great Design Accessible for All</h2>
+                    <div class="vision-item">Everyone deserves to live in a space they love</div>
+                    <div class="vision-item">Good design should be smart, affordable, and actionable</div>
+                    <div class="vision-item">People want to feel confident, creative, and supported — Reno AI enables that</div>
+                    <div class="vision-item">We're building the interface between design intelligence and human wellbeing</div>
+                </div>
+            </section>
+
+            <!-- Learnings -->
+            <section class="content-section">
+                <h2 class="section-title-case">What I Learned</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-title">Mobile-First Design</div>
+                        <div class="feature-desc">Building for iOS taught me the importance of intuitive, touch-first experiences</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-title">Computer Vision</div>
+                        <div class="feature-desc">Learned to implement ARKit and RealityKit for spatial scanning and AR visualization</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-title">User Psychology</div>
+                        <div class="feature-desc">Understanding emotional barriers to home improvement decisions shaped the product</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-simple">
+                <p class="footer-made">Made by me in Atlanta</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nathaniel Steinrueck</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

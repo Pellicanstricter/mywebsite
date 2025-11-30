@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare Trust Engine - Nathaniel Steinrueck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .case-study-hero {
+            background: linear-gradient(135deg, #0A0F1B 0%, #1A2538 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .case-study-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-subtitle {
+            font-size: 1.25rem;
+            color: #94A3B8;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-meta {
+            font-size: 1rem;
+            color: #64748B;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title-case {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #EF4444;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .problem-stat {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #EF4444;
+            margin-bottom: 1rem;
+        }
+
+        .problem-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .problem-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .research-card {
+            background: #141B2D;
+            border: 1px solid #1E293B;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .research-card h4 {
+            font-size: 1.25rem;
+            color: #3B82F6;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .research-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .research-card li {
+            color: #94A3B8;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .research-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3B82F6;
+        }
+
+        .hypothesis-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hypothesis-item {
+            background: #141B2D;
+            border-left: 4px solid #3B82F6;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .hypothesis-item.secondary {
+            border-left-color: #64748B;
+        }
+
+        .hypothesis-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .hypothesis-desc {
+            color: #94A3B8;
+        }
+
+        .finding-box {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 4px solid #FBB F24;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .finding-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .finding-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .finding-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .detail-card {
+            background: #0F172A;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .detail-label {
+            font-size: 0.875rem;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            color: #F0F4F8;
+            font-weight: 600;
+        }
+
+        .quote-box {
+            background: #141B2D;
+            border-left: 4px solid #10B981;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #94A3B8;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-stat {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .impact-sublabel {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .impact-list {
+            background: #141B2D;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .impact-item:last-child {
+            border-bottom: none;
+        }
+
+        .impact-item-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-item-desc {
+            color: #94A3B8;
+        }
+
+        .reflection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .reflection-card {
+            background: #141B2D;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .reflection-card.success {
+            border-left: 4px solid #10B981;
+        }
+
+        .reflection-card.learning {
+            border-left: 4px solid #3B82F6;
+        }
+
+        .reflection-card.insight {
+            border-left: 4px solid #8B5CF6;
+        }
+
+        .reflection-card-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .reflection-card-content {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .additional-findings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .additional-card {
+            background: #141B2D;
+            border: 1px solid #1E293B;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .additional-card:hover {
+            border-color: #3B82F6;
+            transform: translateY(-4px);
+        }
+
+        .additional-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .additional-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .additional-desc {
+            color: #94A3B8;
+            margin-bottom: 1rem;
+        }
+
+        .additional-solution {
+            color: #10B981;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3B82F6;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #10B981;
+            transform: translateX(-4px);
+        }
+
+        .image-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .image-grid-2 img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .image-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">NS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#work" class="nav-link">Work</a></li>
+                <li><a href="index.html#writing" class="nav-link">Writing</a></li>
+                <li><a href="index.html#contact" class="nav-link cta-nav">Let's Talk</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="case-study-hero">
+            <div class="container">
+                <a href="index.html#work" class="back-link">← Back to Work</a>
+                <h1 class="case-study-title">Improving Shopping for Medicare</h1>
+                <p class="case-study-subtitle">Improving online enrollment and driving higher conversion</p>
+                <p class="case-study-meta">RVO Health × UHC • 2024</p>
+                <p class="case-study-meta">Role: Lead UX Researcher • Usability Testing & User Journey Optimization</p>
+            </div>
+        </section>
+
+        <div class="case-study-content">
+            <!-- The Problem -->
+            <section class="content-section">
+                <h2 class="section-title-case">The Problem</h2>
+                <div class="problem-box">
+                    <div class="problem-stat">51%</div>
+                    <div class="problem-title">Drop-off at personal information page</div>
+                    <p class="problem-desc">During the critical Annual Enrollment Period—meaning lost enrollments, wasted marketing spend, and missed revenue</p>
+                </div>
+                <img src="images/medicare-case-study/page3.png" alt="Medicare homepage showing the problem area" style="width: 100%; border-radius: 12px; margin-top: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+            </section>
+
+            <!-- Research Approach -->
+            <section class="content-section">
+                <h2 class="section-title-case">Research Approach</h2>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <h4>📊 Site Data Analysis</h4>
+                        <ul>
+                            <li>Analyzed 2024 Annual Enrollment Period data to identify patterns</li>
+                            <li>Evaluated both UHC and HelloMedicare data</li>
+                            <li>Identified drop-off points</li>
+                            <li>Generated testable hypotheses</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <h4>👥 Moderated Testing</h4>
+                        <ul>
+                            <li>15 participants (age 65+)</li>
+                            <li>Tested live enrollment flows across three websites</li>
+                            <li>HelloMedicare, UHC, and eHealth (competitor)</li>
+                            <li>Live websites in production</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Hypotheses -->
+            <section class="content-section">
+                <h2 class="section-title-case">Core Hypotheses</h2>
+                <img src="images/medicare-case-study/page5.png" alt="User flow diagrams and hypotheses" style="width: 100%; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+                <div class="hypothesis-list">
+                    <div class="hypothesis-item">
+                        <div class="hypothesis-title">Path Selection</div>
+                        <div class="hypothesis-desc">New Medicare shoppers are more likely to choose the guided match flow path</div>
+                    </div>
+                    <div class="hypothesis-item secondary">
+                        <div class="hypothesis-title">Trust Timing</div>
+                        <div class="hypothesis-desc">Trust levels vary depending on when health information is requested</div>
+                    </div>
+                    <div class="hypothesis-item">
+                        <div class="hypothesis-title">Awareness</div>
+                        <div class="hypothesis-desc">Users recognize and distinguish between browse and guided flows</div>
+                    </div>
+                    <div class="hypothesis-item secondary">
+                        <div class="hypothesis-title">Navigation Confidence</div>
+                        <div class="hypothesis-desc">Results page navigation confidence correlates with users' digital literacy</div>
+                    </div>
+                    <div class="hypothesis-item">
+                        <div class="hypothesis-title">Content Influence</div>
+                        <div class="hypothesis-desc">Messaging and content placement will significantly impact flow entry engagement</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Finding -->
+            <section class="content-section">
+                <h2 class="section-title-case">Key Finding</h2>
+                <img src="images/medicare-case-study/page7.png" alt="Plan card comparison showing current and improved designs" style="width: 100%; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+                <div class="finding-box">
+                    <div class="finding-title">Users needed to browse BEFORE sharing personal information</div>
+                    <p class="finding-desc">Despite our assumption that a guided "match" flow would help users, 11 out of 15 participants preferred exploring plans first—typical shopping behavior we'd overlooked</p>
+                    <div class="finding-details">
+                        <div class="detail-card">
+                            <div class="detail-label">Evidence</div>
+                            <div class="detail-value">11/15 participants preferred browsing first</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label">Impact</div>
+                            <div class="detail-value">Personal info request was creating immediate barrier to entry</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label">Recommendation</div>
+                            <div class="detail-value">Delay PI request; add browse CTA</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    "I need to see what's out there before I give you my information. How do I know this is worth my time?"
+                    <div style="margin-top: 0.5rem; font-size: 0.875rem; color: #64748B;">— Participant quote</div>
+                </div>
+            </section>
+
+            <!-- Quick Spike -->
+            <section class="content-section">
+                <h2 class="section-title-case">Rapid Response: Quick Spike</h2>
+                <p style="color: #94A3B8; margin-bottom: 2rem;">Immediate Product Improvements - collaborating with PM to implement immediate changes during active enrollment.</p>
+
+                <img src="images/medicare-case-study/page9.png" alt="User flow comparison showing before and after changes" style="width: 100%; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+
+                <div class="impact-list">
+                    <div class="impact-item">
+                        <div class="impact-item-title">The Pattern</div>
+                        <div class="impact-item-desc">During week 2 of testing, the pattern was clear across participants</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-item-title">Emergency Session</div>
+                        <div class="impact-item-desc">I convened an emergency meeting with PM and designer. We were mid-enrollment—every day mattered.</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-item-title">The Change</div>
+                        <div class="impact-item-desc">Within 24 hours: prototyped, validated, and shipped the flow change</div>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); padding: 3rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
+                    <div style="font-size: 4rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">40%</div>
+                    <div style="color: rgba(255, 255, 255, 0.9); font-weight: 600; font-size: 1.25rem;">Completion rate achieved</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); margin-top: 0.5rem;">74% relative improvement</div>
+                </div>
+            </section>
+
+            <!-- Additional Findings -->
+            <section class="content-section">
+                <h2 class="section-title-case">Additional Findings</h2>
+                <img src="images/medicare-case-study/page11.png" alt="Additional findings showing trust barriers, plan comparison, and data transparency solutions" style="width: 100%; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+                <div class="additional-findings">
+                    <div class="additional-card">
+                        <div class="additional-icon">⚠️</div>
+                        <div class="additional-title">Trust Barriers</div>
+                        <p class="additional-desc">"Non-governmental" language triggered immediate skepticism</p>
+                        <div class="additional-solution">
+                            → Solution: Added trust badges, clearer UHC branding
+                        </div>
+                    </div>
+                    <div class="additional-card">
+                        <div class="additional-icon">🎯</div>
+                        <div class="additional-title">Plan Comparison</div>
+                        <p class="additional-desc">Users got lost scrolling through plans one-by-one</p>
+                        <div class="additional-solution">
+                            → Solution: Implemented side-by-side view
+                        </div>
+                    </div>
+                    <div class="additional-card">
+                        <div class="additional-icon">👥</div>
+                        <div class="additional-title">Data Transparency</div>
+                        <p class="additional-desc">Users anxious but accepting when value was clear</p>
+                        <div class="additional-solution">
+                            → Solution: Staged communication showing control
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Impact -->
+            <section class="content-section">
+                <h2 class="section-title-case">Impact</h2>
+                <div class="impact-grid">
+                    <div class="impact-stat">
+                        <div class="impact-number">74%</div>
+                        <div class="impact-label">Relative improvement</div>
+                        <div class="impact-sublabel">(from 23% to 40%)</div>
+                    </div>
+                    <div class="impact-stat" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);">
+                        <div class="impact-number">4</div>
+                        <div class="impact-label">Major features shipped</div>
+                        <div class="impact-sublabel">During enrollment</div>
+                    </div>
+                </div>
+
+                <div class="impact-list">
+                    <div class="impact-item">
+                        <div class="impact-item-title">Delayed PI Request Until After Browse</div>
+                        <div class="impact-item-desc">Aligned with natural shopping behavior—users explore first, commit later</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-item-title">Enhanced Trust Signals</div>
+                        <div class="impact-item-desc">Added trust badges and clearer UHC branding to address skepticism</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-item-title">Side-by-Side Plan Comparison</div>
+                        <div class="impact-item-desc">Reduced scrolling frustration and improved decision-making</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-item-title">Improved Cost Transparency</div>
+                        <div class="impact-item-desc">Made total costs clearer upfront to build confidence</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section class="content-section">
+                <h2 class="section-title-case">Reflection</h2>
+                <div class="reflection-grid">
+                    <div class="reflection-card success">
+                        <div class="reflection-card-title">What Worked</div>
+                        <div class="reflection-card-content">Rapid iteration with PM and designer during active testing prevented costly feature bloat and enabled immediate course correction</div>
+                    </div>
+                    <div class="reflection-card learning">
+                        <div class="reflection-card-title">What I'd Do Differently</div>
+                        <div class="reflection-card-content">Establish clearer baseline metrics before testing. The 40% completion rate is directional, but attribution is complex due to concurrent enrollment period changes</div>
+                    </div>
+                    <div class="reflection-card insight">
+                        <div class="reflection-card-title">Key Insight</div>
+                        <div class="reflection-card-content">In high-stakes domains like Medicare, trust signals and respecting natural shopping behavior matter more than feature richness</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-simple">
+                <p class="footer-made">Made by me in Atlanta</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nathaniel Steinrueck</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

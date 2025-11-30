@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Research Copilot - Nathaniel Steinrueck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .case-study-hero {
+            background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .case-study-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-subtitle {
+            font-size: 1.25rem;
+            color: #94A3B8;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-meta {
+            font-size: 1rem;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title-case {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #EF4444;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .problem-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .problem-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #141B2D;
+            border: 1px solid #1E293B;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #8B5CF6;
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            color: #8B5CF6;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .feature-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-badge {
+            background: rgba(139, 92, 246, 0.2);
+            color: #A78BFA;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-stat {
+            background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .impact-sublabel {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .architecture-box {
+            background: #141B2D;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .architecture-step {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #0F172A;
+            border-left: 4px solid #8B5CF6;
+            border-radius: 8px;
+        }
+
+        .architecture-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #8B5CF6;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: 700;
+            margin-right: 1rem;
+        }
+
+        .step-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-desc {
+            color: #94A3B8;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #A78BFA;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #10B981;
+            transform: translateX(-4px);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-desc {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #8B5CF6;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #F0F4F8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .sample-results-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">NS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#work" class="nav-link">Work</a></li>
+                <li><a href="index.html#writing" class="nav-link">Writing</a></li>
+                <li><a href="index.html#contact" class="nav-link cta-nav">Let's Talk</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="case-study-hero">
+            <div class="container">
+                <a href="index.html#work" class="back-link">← Back to Work</a>
+                <h1 class="case-study-title">UX Research Copilot</h1>
+                <p class="case-study-subtitle">AI-powered research synthesis tool</p>
+                <p class="case-study-meta">2025</p>
+                <p class="case-study-meta">Founder — Built End-to-End • Full-Stack Development & Product Design</p>
+            </div>
+        </section>
+
+        <div class="case-study-content">
+            <!-- Live App CTA -->
+            <section class="content-section" style="text-align: center; margin-bottom: 2rem;">
+                <div style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%); padding: 2rem; border-radius: 12px; display: inline-block;">
+                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem; font-size: 1.125rem;">✨ Live Product — Try it now</p>
+                    <a href="https://www.uxrcopilot.com/" target="_blank" class="cta-button" style="display: inline-block; margin: 0;">Visit uxrcopilot.com →</a>
+                </div>
+            </section>
+
+            <!-- Hero Screenshot -->
+            <section class="content-section" style="text-align: center; margin-bottom: 3rem;">
+                <img src="images/uxr-copilot/upload-interface.png" alt="UX Research Copilot Upload Interface" style="width: 100%; max-width: 1000px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+            </section>
+
+            <!-- The Problem -->
+            <section class="content-section">
+                <h2 class="section-title-case">The Problem</h2>
+                <div class="problem-box">
+                    <div class="problem-title">UX researchers spend 60% of their time on synthesis</div>
+                    <p class="problem-desc">After conducting user interviews, researchers face hours of manual work extracting quotes, identifying themes, and creating deliverables. This synthesis bottleneck delays insights and limits the number of studies teams can run.</p>
+                </div>
+                <p style="color: #94A3B8; line-height: 1.7; margin-top: 2rem;">
+                    As a UX researcher myself, I felt this pain constantly. I built UX Research Copilot to automate the synthesis process—turning interview transcripts into structured insights in minutes instead of hours.
+                </p>
+            </section>
+
+            <!-- What It Does -->
+            <section class="content-section">
+                <h2 class="section-title-case">What It Does</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📄</div>
+                        <div class="feature-title">Multi-Format Processing</div>
+                        <div class="feature-desc">Processes interview transcripts, surveys, and research documents (PDF, DOCX, TXT)</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <div class="feature-title">AI Insight Extraction</div>
+                        <div class="feature-desc">Uses GPT-3.5-turbo to extract key quotes, themes, and sentiment from transcripts</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-title">Theme Clustering</div>
+                        <div class="feature-desc">Groups related insights into thematic clusters with priority scoring</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-title">Report Generation</div>
+                        <div class="feature-desc">Generates executive summaries, detailed insights reports, and structured JSON data</div>
+                    </div>
+                </div>
+
+                <img src="images/uxr-copilot/how-it-works.png" alt="How UX Research Copilot Works - Upload, Analyze, Present" style="width: 100%; border-radius: 12px; margin: 3rem 0; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+            </section>
+
+            <!-- Architecture -->
+            <section class="content-section">
+                <h2 class="section-title-case">Multi-Agent Architecture</h2>
+                <p style="color: #94A3B8; margin-bottom: 2rem;">The system uses four specialized AI agents that process data sequentially:</p>
+
+                <div class="architecture-box">
+                    <div class="architecture-step">
+                        <span class="step-number">1</span>
+                        <div style="display: inline-block; vertical-align: top; width: calc(100% - 3.5rem);">
+                            <div class="step-title">DocumentIngestor</div>
+                            <div class="step-desc">Processes files and creates manageable text chunks for analysis</div>
+                        </div>
+                    </div>
+                    <div class="architecture-step">
+                        <span class="step-number">2</span>
+                        <div style="display: inline-block; vertical-align: top; width: calc(100% - 3.5rem);">
+                            <div class="step-title">InsightAnalyzer</div>
+                            <div class="step-desc">Uses GPT-3.5-turbo to extract quotes, themes, sentiment, and confidence scores</div>
+                        </div>
+                    </div>
+                    <div class="architecture-step">
+                        <span class="step-number">3</span>
+                        <div style="display: inline-block; vertical-align: top; width: calc(100% - 3.5rem);">
+                            <div class="step-title">ThemeSynthesizer</div>
+                            <div class="step-desc">Groups related insights and generates thematic summaries with priority levels</div>
+                        </div>
+                    </div>
+                    <div class="architecture-step">
+                        <span class="step-number">4</span>
+                        <div style="display: inline-block; vertical-align: top; width: calc(100% - 3.5rem);">
+                            <div class="step-title">OutputFormatter</div>
+                            <div class="step-desc">Creates structured reports and downloadable deliverables</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack -->
+            <section class="content-section">
+                <h2 class="section-title-case">Tech Stack</h2>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">Streamlit</span>
+                    <span class="tech-badge">GPT-3.5 Turbo</span>
+                    <span class="tech-badge">LangChain</span>
+                    <span class="tech-badge">Redis</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Railway</span>
+                </div>
+            </section>
+
+            <!-- Impact -->
+            <section class="content-section">
+                <h2 class="section-title-case">Impact</h2>
+                <div class="impact-grid">
+                    <div class="impact-stat">
+                        <div class="impact-number">80%</div>
+                        <div class="impact-label">Time Saved</div>
+                        <div class="impact-sublabel">From hours to minutes</div>
+                    </div>
+                    <div class="impact-stat" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                        <div class="impact-number">2-5</div>
+                        <div class="impact-label">Processing Time</div>
+                        <div class="impact-sublabel">Minutes per session</div>
+                    </div>
+                    <div class="impact-stat" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);">
+                        <div class="impact-number">4</div>
+                        <div class="impact-label">Report Types</div>
+                        <div class="impact-sublabel">Auto-generated outputs</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sample Results -->
+            <section class="content-section">
+                <h2 class="section-title-case">Sample Results</h2>
+                <div class="problem-box" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10B981;">
+                    <div class="problem-title">Real Session Example</div>
+                    <p class="problem-desc" style="margin-bottom: 1rem;">Input: 2 interview transcripts (mobile app usability study)</p>
+                    <ul style="color: #94A3B8; line-height: 2; list-style: none; padding: 0;">
+                        <li>✓ 4 key themes identified (Navigation Issues, Feature Requests, Performance, User Goals)</li>
+                        <li>✓ 11 insights extracted with confidence scores</li>
+                        <li>✓ Processing time: 2.1 minutes</li>
+                        <li>✓ Reports generated: Executive summary, detailed insights, JSON data</li>
+                    </ul>
+                </div>
+
+                <img src="images/uxr-copilot/results-dashboard.png" alt="Results Dashboard showing 5 Key Insights, 3 Themes, 11 Quotes" style="width: 100%; border-radius: 12px; margin: 2rem 0; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+
+                <div class="sample-results-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+                    <img src="images/uxr-copilot/research-goals.png" alt="Research Goals & Background" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+                    <img src="images/uxr-copilot/methodology.png" alt="Research Methodology" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="content-section">
+                <div class="cta-box">
+                    <h2 class="cta-title">Try It Yourself</h2>
+                    <p class="cta-desc">Upload your research transcripts and get structured insights in minutes</p>
+                    <a href="https://www.uxrcopilot.com/" target="_blank" class="cta-button">Visit UX Research Copilot →</a>
+                </div>
+            </section>
+
+            <!-- Learnings -->
+            <section class="content-section">
+                <h2 class="section-title-case">What I Learned</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-title">Building for Yourself</div>
+                        <div class="feature-desc">Building a tool I personally needed kept me focused on real user value over feature creep</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-title">Multi-Agent Systems</div>
+                        <div class="feature-desc">Learned to design AI agent pipelines with clear responsibilities and error handling</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-title">Full-Stack Development</div>
+                        <div class="feature-desc">Went from concept to production app, handling backend, frontend, and deployment</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-simple">
+                <p class="footer-made">Made by me in Atlanta</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nathaniel Steinrueck</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

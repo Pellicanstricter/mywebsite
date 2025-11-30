@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Planning Tool - Nathaniel Steinrueck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .case-study-hero {
+            background: linear-gradient(135deg, #1A4BBA 0%, #0D3082 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .case-study-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-subtitle {
+            font-size: 1.25rem;
+            color: #94A3B8;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-meta {
+            font-size: 1rem;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title-case {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1.5rem;
+        }
+
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .context-card {
+            background: #141B2D;
+            border: 1px solid #1E293B;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .context-card h4 {
+            font-size: 1.25rem;
+            color: #4A9EFF;
+            margin-bottom: 1rem;
+        }
+
+        .context-card p {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .problem-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #EF4444;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .problem-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .problem-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .research-card {
+            background: #141B2D;
+            border: 1px solid #1E293B;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .research-card h4 {
+            font-size: 1.25rem;
+            color: #3B82F6;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .research-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .research-card li {
+            color: #94A3B8;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .research-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3B82F6;
+        }
+
+        .hypothesis-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hypothesis-item {
+            background: #141B2D;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .hypothesis-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .hypothesis-status.high-risk {
+            background: rgba(239, 68, 68, 0.2);
+            color: #EF4444;
+        }
+
+        .hypothesis-status.valid {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+        }
+
+        .hypothesis-status.invalid {
+            background: rgba(100, 116, 139, 0.2);
+            color: #94A3B8;
+        }
+
+        .hypothesis-content {
+            flex: 1;
+        }
+
+        .hypothesis-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .hypothesis-desc {
+            color: #94A3B8;
+        }
+
+        .finding-box {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 4px solid #FBBF24;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .finding-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .finding-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .finding-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .detail-card {
+            background: #0F172A;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .detail-label {
+            font-size: 0.875rem;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            color: #F0F4F8;
+            font-weight: 600;
+        }
+
+        .quote-box {
+            background: #141B2D;
+            border-left: 4px solid #10B981;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #94A3B8;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-stat {
+            background: linear-gradient(135deg, #4A9EFF 0%, #1A4BBA 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .impact-sublabel {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .impact-list {
+            background: #141B2D;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .impact-item:last-child {
+            border-bottom: none;
+        }
+
+        .impact-item-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-item-desc {
+            color: #94A3B8;
+        }
+
+        .reflection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .reflection-card {
+            background: #141B2D;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .reflection-card.success {
+            border-left: 4px solid #10B981;
+        }
+
+        .reflection-card.learning {
+            border-left: 4px solid #3B82F6;
+        }
+
+        .reflection-card.insight {
+            border-left: 4px solid #8B5CF6;
+        }
+
+        .reflection-card-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .reflection-card-content {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4A9EFF;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #10B981;
+            transform: translateX(-4px);
+        }
+
+        .journey-steps {
+            background: #141B2D;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .journey-step {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #0F172A;
+            border-left: 4px solid #4A9EFF;
+            border-radius: 8px;
+        }
+
+        .journey-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-title {
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-desc {
+            color: #94A3B8;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">NS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#work" class="nav-link">Work</a></li>
+                <li><a href="index.html#writing" class="nav-link">Writing</a></li>
+                <li><a href="index.html#contact" class="nav-link cta-nav">Let's Talk</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="case-study-hero">
+            <div class="container">
+                <a href="index.html#work" class="back-link">← Back to Work</a>
+                <h1 class="case-study-title">Google Planning Tool</h1>
+                <p class="case-study-subtitle">Helping Google Real Estate Planners Plan, Forecast, and Deliver the Right Spaces</p>
+                <p class="case-study-meta">Outer Labs × Google • 2025</p>
+                <p class="case-study-meta">Role: Lead UX Researcher • Usability Testing & Design Validation</p>
+            </div>
+        </section>
+
+        <div class="case-study-content">
+            <!-- Hero GIF -->
+            <section class="content-section" style="text-align: center; margin-bottom: 3rem;">
+                <img src="images/google-planning-tool/clay-demo.gif" alt="Google Planning Tool Demo" style="width: 100%; max-width: 1000px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+            </section>
+
+            <!-- Context -->
+            <section class="content-section">
+                <h2 class="section-title-case">Context</h2>
+                <div class="context-grid">
+                    <div class="context-card">
+                        <h4>The Challenge</h4>
+                        <p>Google Real Estate needed to merge two separate planning tools into one unified platform for space planning</p>
+                    </div>
+                    <div class="context-card">
+                        <h4>Team Concern</h4>
+                        <p>Would the new merged design actually meet user needs before investing in full development?</p>
+                    </div>
+                    <div class="context-card">
+                        <h4>My Role</h4>
+                        <p>Product Strategist on team with 1 Product Designer, 1 PM, 5 Engineers</p>
+                    </div>
+                    <div class="context-card">
+                        <h4>Timeline</h4>
+                        <p>3 Weeks</p>
+                    </div>
+                </div>
+
+                <img src="images/google-planning-tool/tool-interface.png" alt="Google Planning Tool Interface showing TestFit Study with floor plan and configuration panel" style="width: 100%; border-radius: 12px; margin: 2rem 0; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+            </section>
+
+            <!-- The Problem -->
+            <section class="content-section">
+                <h2 class="section-title-case">The Problem</h2>
+                <div class="problem-box">
+                    <div class="problem-title">High uncertainty that the new designs would not meet users needs</div>
+                    <p class="problem-desc">Before committing engineering resources, we needed to validate the design and identify potential barriers to adoption</p>
+                </div>
+
+                <h3 style="color: #4A9EFF; font-size: 1.5rem; margin: 2rem 0 1rem;">Research Goals</h3>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <h4>👥 Target Users</h4>
+                        <ul>
+                            <li>Who is this most useful for, when, and for which tasks?</li>
+                            <li>Helps marketing, communications, and change management be precise, targeted, and clear</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <h4>🎯 Goal Achievement</h4>
+                        <ul>
+                            <li>Can users successfully accomplish their primary goals?</li>
+                            <li>Determines if minimum features as implemented today will meet their needs</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <h4>💡 Barriers to Adoption</h4>
+                        <ul>
+                            <li>Are there barriers to adoption?</li>
+                            <li>Uncovers and highlights barriers in their most common workflows before launch</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Approach -->
+            <section class="content-section">
+                <h2 class="section-title-case">Research Approach</h2>
+                <p style="color: #94A3B8; margin-bottom: 2rem;">My Recommendation: Define critical user journeys and test those specific flows to focus the study</p>
+
+                <div class="research-grid">
+                    <div class="research-card">
+                        <h4>📊 Research Methods</h4>
+                        <ul>
+                            <li>Usability testing with clickable prototype</li>
+                            <li>Post-session survey for quantified results</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <h4>👥 Participants (6 Total)</h4>
+                        <ul>
+                            <li>2 Executive</li>
+                            <li>2 Project Managers</li>
+                            <li>2 Designers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="finding-box" style="background: rgba(59, 130, 246, 0.1); border-left-color: #3B82F6;">
+                    <div class="finding-title">Why Post-Session Questionnaire?</div>
+                    <p class="finding-desc">Provided clear, quantified results that were easy for the team to digest and prioritize.</p>
+                </div>
+
+                <img src="images/google-planning-tool/research-plan-prototype.png" alt="Research Plan and Clickable Figma Prototype" style="width: 100%; border-radius: 12px; margin: 2rem 0; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+
+                <h3 style="color: #4A9EFF; font-size: 1.5rem; margin: 2rem 0 1rem;">Critical User Journey</h3>
+                <p style="color: #94A3B8; margin-bottom: 1rem;"><strong>Goal:</strong> Visualize and edit space layouts to align with proposed program</p>
+
+                <div class="journey-steps">
+                    <div class="journey-step">
+                        <div class="step-title">Create Study</div>
+                        <div class="step-desc">Link program study as reference</div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="step-title">Configure Study</div>
+                        <div class="step-desc">Specify parameters</div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="step-title">Create Layout</div>
+                        <div class="step-desc">Place programs to meet goals</div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="step-title">Review Metrics</div>
+                        <div class="step-desc">Check alignment with targets</div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="step-title">Toggle Fidelity</div>
+                        <div class="step-desc">Refine layout detail</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hypotheses -->
+            <section class="content-section">
+                <h2 class="section-title-case">Hypotheses</h2>
+                <div class="hypothesis-list">
+                    <div class="hypothesis-item">
+                        <div class="hypothesis-status high-risk">High Risk</div>
+                        <div class="hypothesis-content">
+                            <div class="hypothesis-title">Visual & Functional Differentiation</div>
+                            <div class="hypothesis-desc">Current distinction between regions and blocks in SpacePlan is clear to users</div>
+                        </div>
+                        <div class="hypothesis-status invalid">Invalid</div>
+                    </div>
+                    <div class="hypothesis-item">
+                        <div class="hypothesis-status high-risk">High Risk</div>
+                        <div class="hypothesis-content">
+                            <div class="hypothesis-title">Visual Fidelity Adaptability</div>
+                            <div class="hypothesis-desc">Users need to switch between fidelity levels and find both views beneficial</div>
+                        </div>
+                        <div class="hypothesis-status valid">Valid</div>
+                    </div>
+                    <div class="hypothesis-item">
+                        <div class="hypothesis-content">
+                            <div class="hypothesis-title">Preference for Existing Conditions</div>
+                            <div class="hypothesis-desc">Users prefer to start from existing conditions rather than a blank slate</div>
+                        </div>
+                        <div class="hypothesis-status invalid">Invalid</div>
+                    </div>
+                    <div class="hypothesis-item">
+                        <div class="hypothesis-content">
+                            <div class="hypothesis-title">Typical Project Workflow</div>
+                            <div class="hypothesis-desc">Project executives evaluate programs at high level, then hand off to designers for detailed layouts</div>
+                        </div>
+                        <div class="hypothesis-status valid">Valid</div>
+                    </div>
+                    <div class="hypothesis-item">
+                        <div class="hypothesis-content">
+                            <div class="hypothesis-title">Portfolio Optimization</div>
+                            <div class="hypothesis-desc">SpacePlan efficiently facilitates planning for specific portions of the floor plan</div>
+                        </div>
+                        <div class="hypothesis-status valid">Valid</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Finding -->
+            <section class="content-section">
+                <h2 class="section-title-case">Small But Impactful Insight</h2>
+                <div class="finding-box">
+                    <div class="finding-title">Floor plan preview distracted users during setup</div>
+                    <p class="finding-desc">The canvas view during project configuration caused confusion about how the program worked</p>
+                    <div class="finding-details">
+                        <div class="detail-card">
+                            <div class="detail-label">Evidence</div>
+                            <div class="detail-value">6/6 participants mentioned confusion with auto-generated floor plan</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label">Impact</div>
+                            <div class="detail-value">Caused delays in program selection and misunderstanding of tool functions</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label">Recommendation</div>
+                            <div class="detail-value">Remove or halftone canvas to emphasize project setup</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    "I thought I was in a project, not setting it up"
+                    <div style="margin-top: 0.5rem; font-size: 0.875rem; color: #64748B;">— Participant quote</div>
+                </div>
+            </section>
+
+            <!-- Rapid Iteration -->
+            <section class="content-section">
+                <h2 class="section-title-case">Rapid Iteration</h2>
+                <div class="impact-list">
+                    <div class="impact-item">
+                        <div class="impact-item-title">The Pattern</div>
+                        <div class="impact-item-desc">Consistent feedback highlighted redundant features and confusing flows.</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-item-title">Our Response</div>
+                        <div class="impact-item-desc">Caused delays in program selection and misunderstanding of tool functions.</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-item-title">The Result</div>
+                        <div class="impact-item-desc">Simplified workflow by combining redundant steps within 1 day of testing.</div>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #4A9EFF 0%, #1A4BBA 100%); padding: 3rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
+                    <div style="font-size: 4rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">1</div>
+                    <div style="color: rgba(255, 255, 255, 0.9); font-weight: 600; font-size: 1.25rem;">Day Turnaround</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); margin-top: 0.5rem;">From insight to redesign</div>
+                </div>
+            </section>
+
+            <!-- Outcomes -->
+            <section class="content-section">
+                <h2 class="section-title-case">Outcomes</h2>
+                <div class="impact-grid">
+                    <div class="impact-stat">
+                        <div class="impact-number">160</div>
+                        <div class="impact-label">Engineering hours saved</div>
+                    </div>
+                    <div class="impact-stat" style="background: linear-gradient(135deg, #64748B 0%, #475569 100%);">
+                        <div class="impact-number">5/5</div>
+                        <div class="impact-label">Key issues identified</div>
+                    </div>
+                </div>
+
+                <div class="impact-list">
+                    <div class="impact-item">
+                        <div class="impact-item-title">Validated Target Users</div>
+                        <div class="impact-item-desc">Most useful for product managers in early stage design for quick spatial planning with real-time metrics</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-item-title">De-risked Development</div>
+                        <div class="impact-item-desc">Prioritized features causing friction instead of developing unnecessary functionality, avoiding significant rework</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-item-title">Streamlined Design</div>
+                        <div class="impact-item-desc">Removed redundant steps and clarified user flows based on direct feedback from target users</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section class="content-section">
+                <h2 class="section-title-case">Learnings</h2>
+                <div class="reflection-grid">
+                    <div class="reflection-card success">
+                        <div class="reflection-card-title">Raise concerns early and align quickly</div>
+                        <div class="reflection-card-content">Close collaboration and rapid alignment across the team turned insights into action within days, not weeks</div>
+                    </div>
+                    <div class="reflection-card learning">
+                        <div class="reflection-card-title">Prioritize what to test, not everything</div>
+                        <div class="reflection-card-content">Caused delays in program selection and misunderstanding of tool functions</div>
+                    </div>
+                    <div class="reflection-card insight">
+                        <div class="reflection-card-title">Post-session questionnaire created rallying points</div>
+                        <div class="reflection-card-content">Provided clear, quantified results that were easy for the team to digest and prioritize.</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-simple">
+                <p class="footer-made">Made by me in Atlanta</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nathaniel Steinrueck</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

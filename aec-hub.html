@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEC Hub - Nathaniel Steinrueck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .case-study-hero {
+            background: linear-gradient(135deg, #2C5F7C 0%, #1A3A4D 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .case-study-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-subtitle {
+            font-size: 1.25rem;
+            color: #94A3B8;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-meta {
+            font-size: 1rem;
+            color: #F0F4F8;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title-case {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #EF4444;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .problem-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .problem-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #141B2D;
+            border: 1px solid #1E293B;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #2C5F7C;
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            color: #5BA3D0;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .feature-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-badge {
+            background: rgba(44, 95, 124, 0.2);
+            color: #5BA3D0;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-stat {
+            background: linear-gradient(135deg, #2C5F7C 0%, #1A3A4D 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .impact-sublabel {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #5BA3D0;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #10B981;
+            transform: translateX(-4px);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #2C5F7C 0%, #1A3A4D 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-desc {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2C5F7C;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #F0F4F8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .pillar-card {
+            background: #141B2D;
+            border-left: 4px solid #5BA3D0;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .pillar-number {
+            display: inline-block;
+            background: #2C5F7C;
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #5BA3D0;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-desc {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">NS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#work" class="nav-link">Work</a></li>
+                <li><a href="index.html#writing" class="nav-link">Writing</a></li>
+                <li><a href="index.html#contact" class="nav-link cta-nav">Let's Talk</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="case-study-hero">
+            <div class="container">
+                <a href="index.html#work" class="back-link">← Back to Work</a>
+                <h1 class="case-study-title">AEC Hub</h1>
+                <p class="case-study-subtitle">The knowledge platform for architecture, engineering, and construction professionals</p>
+                <p class="case-study-meta">2025</p>
+                <p class="case-study-meta">Founder — Built End-to-End • Full-Stack Development & Content Strategy</p>
+            </div>
+        </section>
+
+        <div class="case-study-content">
+            <!-- Live Product CTA -->
+            <section class="content-section" style="text-align: center; margin-bottom: 2rem;">
+                <div style="background: linear-gradient(135deg, #2C5F7C 0%, #1A3A4D 100%); padding: 2rem; border-radius: 12px; display: inline-block;">
+                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem; font-size: 1.125rem;">🏗️ Live Platform — Explore now</p>
+                    <a href="https://www.aechub.org/" target="_blank" class="cta-button" style="display: inline-block; margin: 0;">Visit aechub.org →</a>
+                </div>
+            </section>
+
+            <!-- Hero Screenshot -->
+            <section class="content-section" style="text-align: center; margin-bottom: 3rem;">
+                <img src="images/aec-hub/hero.png" alt="AEC Hub Homepage" style="width: 100%; max-width: 1000px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+            </section>
+
+            <!-- The Problem -->
+            <section class="content-section">
+                <h2 class="section-title-case">The Problem</h2>
+                <div class="problem-box">
+                    <div class="problem-title">AEC professionals struggle to find and evaluate AI tools</div>
+                    <p class="problem-desc">The architecture, engineering, and construction industries are being transformed by AI and technology. But professionals face information overload—hundreds of tools, unclear value propositions, and no trusted source for guidance on what actually works.</p>
+                </div>
+                <p style="color: #94A3B8; line-height: 1.7; margin-top: 2rem;">
+                    I built AEC Hub to be the definitive resource for AEC professionals navigating technological transformation—curating tools, sharing implementation strategies, and building a community of forward-thinking industry leaders.
+                </p>
+            </section>
+
+            <!-- What It Is -->
+            <section class="content-section">
+                <h2 class="section-title-case">What It Is</h2>
+                <p style="color: #94A3B8; margin-bottom: 2rem;">A comprehensive digital resource platform dedicated to empowering builders with the knowledge and tools to navigate technology in the built world.</p>
+
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <span class="pillar-number">1</span>
+                        <div class="pillar-title">Curated Expertise</div>
+                        <div class="pillar-desc">Vetted tools, strategies, and insights specifically for AEC professionals—eliminating noise and focusing on what actually delivers value.</div>
+                    </div>
+                    <div class="pillar-card">
+                        <span class="pillar-number">2</span>
+                        <div class="pillar-title">Accelerated Innovation</div>
+                        <div class="pillar-desc">Practical guides and real-world case studies for implementing AI and technology—from concept to production.</div>
+                    </div>
+                    <div class="pillar-card">
+                        <span class="pillar-number">3</span>
+                        <div class="pillar-title">Community Focused</div>
+                        <div class="pillar-desc">A network of forward-thinking leaders in architecture, engineering, and construction sharing knowledge and advancing the industry together.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section class="content-section">
+                <h2 class="section-title-case">Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <div class="feature-title">Tools Directory</div>
+                        <div class="feature-desc">Curated catalog of 200+ AEC tools with reviews, comparisons, and implementation guides</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <div class="feature-title">Learning Resources</div>
+                        <div class="feature-desc">Educational content, courses, and tutorials for mastering AI and technology in AEC</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📅</div>
+                        <div class="feature-title">Industry Events</div>
+                        <div class="feature-desc">Conferences, workshops, and networking opportunities for AEC professionals</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <div class="feature-title">Expert Consultants</div>
+                        <div class="feature-desc">Directory of specialists helping firms implement technology and drive innovation</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack -->
+            <section class="content-section">
+                <h2 class="section-title-case">Tech Stack</h2>
+                <div class="tech-stack">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                    <span class="tech-badge">Supabase</span>
+                    <span class="tech-badge">Vercel</span>
+                    <span class="tech-badge">Stripe</span>
+                </div>
+            </section>
+
+            <!-- Impact -->
+            <section class="content-section">
+                <h2 class="section-title-case">Impact</h2>
+                <div class="impact-grid">
+                    <div class="impact-stat">
+                        <div class="impact-number">200+</div>
+                        <div class="impact-label">Curated Tools</div>
+                        <div class="impact-sublabel">Across all AEC categories</div>
+                    </div>
+                    <div class="impact-stat" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                        <div class="impact-number">1000+</div>
+                        <div class="impact-label">Monthly Users</div>
+                        <div class="impact-sublabel">AEC professionals</div>
+                    </div>
+                    <div class="impact-stat" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);">
+                        <div class="impact-number">3</div>
+                        <div class="impact-label">Revenue Streams</div>
+                        <div class="impact-sublabel">Sponsorships, ads, consulting</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="content-section">
+                <div class="cta-box">
+                    <h2 class="cta-title">Explore the Platform</h2>
+                    <p class="cta-desc">Discover tools, insights, and resources for the future of AEC</p>
+                    <a href="https://www.aechub.org/" target="_blank" class="cta-button">Visit AEC Hub →</a>
+                </div>
+            </section>
+
+            <!-- Learnings -->
+            <section class="content-section">
+                <h2 class="section-title-case">What I Learned</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-title">Building for a Niche</div>
+                        <div class="feature-desc">Deep industry knowledge from architecture background helped create truly valuable content for AEC professionals</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-title">Content is King</div>
+                        <div class="feature-desc">Curated, high-quality resources beat breadth—users come for depth and expertise, not just listings</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-title">Monetization Strategy</div>
+                        <div class="feature-desc">Building multiple revenue streams (sponsorships, advertising, consulting) creates sustainable business model</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-simple">
+                <p class="footer-made">Made by me in Atlanta</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nathaniel Steinrueck</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
