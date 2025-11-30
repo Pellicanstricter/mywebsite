@@ -463,7 +463,7 @@ section {
     font-size: clamp(0.85rem, 1.3vw, 1rem);
     line-height: 1.5;
     margin-bottom: var(--spacing-sm);
-    color: #D1D5DB;
+    color: #F0F4F8;
     font-weight: 400;
     max-width: 750px;
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
