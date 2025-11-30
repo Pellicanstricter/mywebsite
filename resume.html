@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Nathaniel Steinrueck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .resume-hero {
+            background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .resume-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #F0F4F8;
+            margin-bottom: 1rem;
+        }
+
+        .resume-subtitle {
+            font-size: 1.25rem;
+            color: #94A3B8;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .resume-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: #3B82F6;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #F0F4F8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .resume-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .resume-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title-resume {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #3B82F6;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3B82F6;
+        }
+
+        .experience-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .job-header {
+            margin-bottom: 1rem;
+        }
+
+        .company-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 0.25rem;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #5BA3D0;
+            margin-bottom: 0.25rem;
+        }
+
+        .job-meta {
+            color: #94A3B8;
+            font-size: 0.9rem;
+        }
+
+        .job-description {
+            margin-top: 1rem;
+        }
+
+        .job-description ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-description li {
+            color: #94A3B8;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .job-description li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3B82F6;
+            font-weight: bold;
+        }
+
+        .education-item {
+            margin-bottom: 2rem;
+        }
+
+        .degree-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 0.25rem;
+        }
+
+        .school-name {
+            color: #5BA3D0;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-meta {
+            color: #94A3B8;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .honors {
+            color: #94A3B8;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: #141B2D;
+            border-left: 4px solid #3B82F6;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .skill-category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #3B82F6;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-category-content {
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #5BA3D0;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #10B981;
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">NS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#work" class="nav-link">Work</a></li>
+                <li><a href="index.html#writing" class="nav-link">Writing</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+                <li><a href="index.html#contact" class="nav-link cta-nav">Let's Talk</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="resume-hero">
+            <div class="container">
+                <a href="index.html" class="back-link">← Back to Home</a>
+                <h1 class="resume-title">Nathaniel Steinrueck</h1>
+                <p class="resume-subtitle">UX Researcher with expertise in mixed-methods research and AI-powered workflows, specializing in translating user insights into actionable product improvements across healthcare, enterprise software, and SaaS platforms</p>
+                <div class="resume-actions">
+                    <a href="Nathaniel_Steinrueck_Resume.pdf" download class="download-btn">
+                        📄 Download PDF Resume
+                    </a>
+                    <a href="mailto:steinrueckn@gmail.com" class="download-btn" style="background: transparent; border: 2px solid white; color: white;">
+                        ✉️ Contact Me
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="resume-content">
+            <!-- Work Experience -->
+            <section class="resume-section">
+                <h2 class="section-title-resume">Work Experience</h2>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">RVO Health</div>
+                        <div class="job-title">UX Researcher</div>
+                        <div class="job-meta">Remote • Full-time • Sep 2024 - Present</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Conducted 20+ mixed-methods studies including stakeholder interviews, user interviews, usability testing (moderated/unmoderated), surveys, and A/B testing, presenting findings to C-suite executives</li>
+                            <li>Built custom AI-powered research workflow using ChatGPT and Claude APIs to streamline user testing analysis, synthesis, and insight delivery - reducing cycles from 3 weeks to 1 week (66% improvement)</li>
+                            <li>Developed rapid prototyping workflow leveraging AI tools to move from research insights to testable prototypes and implementation hand-off within weeks rather than months</li>
+                            <li>Created user personas and journey maps that identified trust barriers, leading to messaging optimization that boosted plan completion rates by 367%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">Google (via Outer Labs)</div>
+                        <div class="job-title">UX Researcher & Product Strategist</div>
+                        <div class="job-meta">Remote • Sep 2022 - May 2024</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Led end-to-end UX research for AI-powered workplace intelligence tools, planning research activities and deliverables in collaboration with cross-functional teams</li>
+                            <li>Executed 14+ comprehensive studies including concept testing, usability testing, stakeholder interviews, and user behavior analysis</li>
+                            <li>Analyzed and synthesized qualitative and quantitative data to generate actionable insights, directly informing product roadmaps and 20+ feature improvements</li>
+                            <li>Identified usability barriers through targeted testing, enabling 50% of previously blocked users to complete core workflows</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">cove.tool</div>
+                        <div class="job-title">Design Researcher</div>
+                        <div class="job-meta">Atlanta, GA • Jan 2022 - Sep 2022</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Planned and executed user research for cost estimation tool launch, conducting expert interviews and usability studies to uncover adoption barriers</li>
+                            <li>Designed end-to-end experience for new drawing tool through iterative user testing and feedback integration</li>
+                            <li>Increased user satisfaction by 20% through research-driven redesign of web-based SaaS platform</li>
+                            <li>Developed and launched educational program onboarding 200+ customers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-name">Earlier Experience</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Designer • Houser Walker Architecture • May 2021 - Jan 2022</li>
+                            <li>Designer • Duda|Paine Architects • May 2019 - Aug 2019</li>
+                            <li>Designer • HH Architecture • May 2018 - Aug 2018</li>
+                            <li>Digital Fabrication Manager • Green Mountain College • Aug 2015 - Jul 2017</li>
+                            <li>Co-Founder & Project Manager • Meiker Design Build, Guatemala • Aug 2013 - Sep 2015</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="resume-section">
+                <h2 class="section-title-resume">Education</h2>
+
+                <div class="education-item">
+                    <div class="degree-name">Masters in Architecture</div>
+                    <div class="school-name">North Carolina State University</div>
+                    <div class="education-meta">GPA: 4.0 • Jan 2017 - Dec 2020</div>
+                    <div class="honors">AIA Henry Adams Medal, M.Arch Award for Design Achievement, M.Arch. Academic Achievement Award</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree-name">B.A. in Design</div>
+                    <div class="school-name">Green Mountain College • Vermont</div>
+                    <div class="education-meta">GPA: 3.46 • Jan 2009 - Dec 2013</div>
+                    <div class="honors">Minor in Product Design</div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="resume-section">
+                <h2 class="section-title-resume">Skills</h2>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-category-title">Research Methods</div>
+                        <div class="skill-category-content">
+                            Mixed-methods research design, generative & evaluative research, usability testing (moderated & unmoderated), stakeholder interviews, user interviews, A/B testing & multivariate experiments, user journey mapping, persona development, card sorting, survey design, user behavior analysis
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">AI & Workflow Innovation</div>
+                        <div class="skill-category-content">
+                            Custom AI tool development for research automation, API integration (ChatGPT, Claude), AI-powered synthesis and analysis workflows, rapid prototyping with AI assistance, research process optimization
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Analysis & Synthesis</div>
+                        <div class="skill-category-content">
+                            Qualitative and quantitative data analysis, insight generation, pattern recognition, research synthesis, actionable recommendations, compelling storytelling and presentation
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Collaboration & Communication</div>
+                        <div class="skill-category-content">
+                            Cross-functional collaboration with designers, PMs, and engineers; executive presentation; stakeholder management; strategic thinking; agile research methodologies
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Tools</div>
+                        <div class="skill-category-content">
+                            Figma/FigJam, Dovetail, UserTesting, Dscout, Qualtrics, Marvin, Mixpanel/Pendo, Google Analytics, SQL, ChatGPT, Claude, Python (basic), API integration
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-simple">
+                <p class="footer-made">Made by me in Atlanta</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nathaniel Steinrueck</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
