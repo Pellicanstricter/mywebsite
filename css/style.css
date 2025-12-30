@@ -495,27 +495,24 @@ body {
 }
 
 .project-cta {
-    display: inline-block;
-    color: var(--accent-pink);
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: var(--accent-pink);
+    color: white;
     text-decoration: none;
     font-weight: 700;
     margin-top: var(--spacing-sm);
     transition: all var(--transition-base);
-    position: relative;
-}
-
-.project-cta::after {
-    content: '→';
-    margin-left: 0.5rem;
-    transition: margin-left var(--transition-base);
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid var(--accent-pink);
 }
 
 .project-cta:hover {
-    color: var(--accent-marigold);
-}
-
-.project-cta:hover::after {
-    margin-left: 1rem;
+    background: var(--accent-marigold);
+    border-color: var(--accent-marigold);
+    transform: scale(1.02);
 }
 
 /* Contact Section */
