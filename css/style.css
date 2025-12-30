@@ -406,6 +406,11 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: transform var(--transition-base);
+}
+
+.project-card:hover {
+    transform: scale(1.02);
 }
 
 .project-card::before {
@@ -482,18 +487,21 @@ body {
 }
 
 .tag-research {
-    background: var(--accent-yellow);
-    color: var(--text-primary);
+    background: transparent;
+    border: 1.5px solid var(--accent-capri);
+    color: var(--accent-capri);
 }
 
 .tag-app {
-    background: var(--accent-yellow);
-    color: var(--text-primary);
+    background: transparent;
+    border: 1.5px solid var(--accent-marigold);
+    color: var(--accent-marigold);
 }
 
 .tag-tech {
-    background: var(--accent-yellow);
-    color: var(--text-primary);
+    background: transparent;
+    border: 1.5px solid var(--accent-capri);
+    color: var(--accent-capri);
 }
 
 .project-cta {
