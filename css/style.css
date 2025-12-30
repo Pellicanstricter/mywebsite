@@ -404,6 +404,8 @@ body {
     padding: var(--spacing-md);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card::before {
@@ -471,10 +473,10 @@ body {
 }
 
 .tag {
-    font-size: var(--font-size-sm);
-    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 6px;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.03em;
 }
@@ -498,11 +500,11 @@ body {
     display: block;
     width: 100%;
     padding: 0.875rem 1.5rem;
-    background: var(--accent-pink);
-    color: white;
+    background: transparent;
+    color: var(--accent-pink);
     text-decoration: none;
     font-weight: 700;
-    margin-top: var(--spacing-sm);
+    margin-top: auto;
     transition: all var(--transition-base);
     border-radius: 8px;
     text-align: center;
@@ -510,8 +512,8 @@ body {
 }
 
 .project-cta:hover {
-    background: var(--accent-marigold);
-    border-color: var(--accent-marigold);
+    background: var(--accent-pink);
+    color: white;
     transform: scale(1.02);
 }
 
