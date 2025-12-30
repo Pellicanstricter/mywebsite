@@ -402,7 +402,7 @@ body {
     border: 2px solid var(--border-subtle);
     border-radius: 16px;
     padding: var(--spacing-md);
-    transition: all var(--transition-bounce);
+    transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
 }
@@ -413,7 +413,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 5px;
+    height: 3px;
     background: linear-gradient(90deg,
         var(--accent-pink) 0%,
         var(--accent-capri) 50%,
@@ -429,8 +429,8 @@ body {
 
 .project-card:hover {
     border-color: var(--accent-capri);
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .project-image-preview {
