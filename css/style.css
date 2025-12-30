@@ -429,8 +429,8 @@ body {
 
 .project-card:hover {
     border-color: var(--accent-capri);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: scale(1.01);
+    box-shadow: var(--shadow-sm);
 }
 
 .project-image-preview {
