@@ -404,6 +404,26 @@ body {
     padding: var(--spacing-md);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+        var(--accent-pink) 0%,
+        var(--accent-capri) 50%,
+        var(--accent-kiwi) 100%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-card:hover {
