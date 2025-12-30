@@ -403,6 +403,26 @@ body {
     border-radius: 16px;
     padding: var(--spacing-md);
     position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+        var(--accent-pink) 0%,
+        var(--accent-capri) 50%,
+        var(--accent-kiwi) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-image-preview {
