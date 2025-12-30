@@ -402,34 +402,13 @@ body {
     border: 2px solid var(--border-subtle);
     border-radius: 16px;
     padding: var(--spacing-md);
-    transition: all var(--transition-base);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     position: relative;
-    overflow: hidden;
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg,
-        var(--accent-pink) 0%,
-        var(--accent-capri) 50%,
-        var(--accent-kiwi) 100%);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--transition-base);
-}
-
-.project-card:hover::before {
-    transform: scaleX(1);
 }
 
 .project-card:hover {
     border-color: var(--accent-capri);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 8px rgba(77, 181, 197, 0.15);
 }
 
 .project-image-preview {
