@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reno AI - iOS app with computer vision for home redesign. Built by Nathaniel Steinrueck using Swift, CoreML, and AI image generation.">
     <title>Reno AI - Nathaniel Steinrueck</title>
+    <meta property="og:title" content="Reno AI - Nathaniel Steinrueck">
+    <meta property="og:description" content="iOS app with computer vision for home redesign. Visualize your space with AI.">
+    <meta property="og:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            background: #0F1729;
+        }
+
         .case-study-hero {
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-            padding: 120px 0 80px;
+            background: #0F1729;
+            padding: 120px 0 60px;
             text-align: center;
+            border-bottom: 3px solid #4DB5C5;
         }
 
         .case-study-title {
             font-family: 'Syne', sans-serif;
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
-            color: #F0F4F8;
+            color: #FFFFFF;
             margin-bottom: 1rem;
         }
 
         .case-study-subtitle {
             font-size: 1.25rem;
             color: #94A3B8;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .case-study-meta {
             font-size: 1rem;
-            color: #F0F4F8;
+            color: #94A3B8;
             margin-bottom: 0.5rem;
         }
 
@@ -39,6 +50,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
+            background: #0F1729;
         }
 
         .content-section {
@@ -75,7 +87,7 @@
 
         .quote-box {
             background: #141B2D;
-            border-left: 4px solid #10B981;
+            border-left: 4px solid #E85D75;
             padding: 1.5rem;
             border-radius: 8px;
             margin: 2rem 0;
@@ -99,7 +111,7 @@
         }
 
         .feature-card:hover {
-            border-color: #10B981;
+            border-color: #E85D75;
             transform: translateY(-4px);
         }
 
@@ -110,7 +122,7 @@
 
         .feature-title {
             font-size: 1.25rem;
-            color: #10B981;
+            color: #E85D75;
             margin-bottom: 1rem;
             font-weight: 700;
         }
@@ -131,7 +143,7 @@
             padding: 1.5rem;
             margin-bottom: 1rem;
             background: #0F172A;
-            border-left: 4px solid #10B981;
+            border-left: 4px solid #E85D75;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -144,7 +156,7 @@
 
         .step-number {
             display: inline-block;
-            background: #10B981;
+            background: #E85D75;
             color: white;
             width: 2.5rem;
             height: 2.5rem;
@@ -178,8 +190,8 @@
         }
 
         .tech-badge {
-            background: rgba(16, 185, 129, 0.2);
-            color: #10B981;
+            background: rgba(232, 93, 117, 0.2);
+            color: #E85D75;
             padding: 0.5rem 1rem;
             border-radius: 6px;
             font-weight: 600;
@@ -194,7 +206,8 @@
         }
 
         .impact-stat {
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            background: #141B2D;
+            border: 2px solid #4DB5C5;
             padding: 2rem;
             border-radius: 12px;
             text-align: center;
@@ -221,19 +234,19 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #34D399;
+            color: #E85D75;
             font-weight: 600;
             margin-bottom: 2rem;
             transition: all 0.3s ease;
         }
 
         .back-link:hover {
-            color: #10B981;
+            color: #FFD23F;
             transform: translateX(-4px);
         }
 
         .vision-box {
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            background: linear-gradient(135deg, #E85D75 0%, #FFD23F 100%);
             padding: 3rem;
             border-radius: 12px;
             margin: 3rem 0;
@@ -436,12 +449,12 @@
                         <div class="impact-label">U.S. Homeowners</div>
                         <div class="impact-sublabel">20M+ actively improving</div>
                     </div>
-                    <div class="impact-stat" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);">
+                    <div class="impact-stat">
                         <div class="impact-number">$463B</div>
                         <div class="impact-label">Market Size</div>
                         <div class="impact-sublabel">Q1 2024 renovation spend</div>
                     </div>
-                    <div class="impact-stat" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">
+                    <div class="impact-stat">
                         <div class="impact-number">$10</div>
                         <div class="impact-label">Monthly Subscription</div>
                         <div class="impact-sublabel">Target: Ages 25-54</div>
@@ -449,7 +462,7 @@
                 </div>
 
                 <div style="background: #141B2D; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
-                    <h3 style="color: #10B981; margin-bottom: 1rem;">Revenue Projections</h3>
+                    <h3 style="color: #E85D75; margin-bottom: 1rem;">Revenue Projections</h3>
                     <table style="width: 100%; color: #94A3B8;">
                         <tr style="border-bottom: 1px solid #1E293B;">
                             <th style="text-align: left; padding: 1rem; color: #F0F4F8;">Adoption Rate</th>
@@ -459,17 +472,17 @@
                         <tr style="border-bottom: 1px solid #1E293B;">
                             <td style="padding: 1rem;">0.01%</td>
                             <td style="padding: 1rem;">2,000</td>
-                            <td style="text-align: right; padding: 1rem; color: #10B981; font-weight: 700;">$20,000</td>
+                            <td style="text-align: right; padding: 1rem; color: #E85D75; font-weight: 700;">$20,000</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #1E293B;">
                             <td style="padding: 1rem;">0.15%</td>
                             <td style="padding: 1rem;">30,000</td>
-                            <td style="text-align: right; padding: 1rem; color: #10B981; font-weight: 700;">$300,000</td>
+                            <td style="text-align: right; padding: 1rem; color: #E85D75; font-weight: 700;">$300,000</td>
                         </tr>
                         <tr>
                             <td style="padding: 1rem;">1%</td>
                             <td style="padding: 1rem;">200,000</td>
-                            <td style="text-align: right; padding: 1rem; color: #10B981; font-weight: 700;">$2,000,000</td>
+                            <td style="text-align: right; padding: 1rem; color: #E85D75; font-weight: 700;">$2,000,000</td>
                         </tr>
                     </table>
                 </div>

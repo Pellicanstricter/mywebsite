@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Google Planning Tool - UX research case study by Nathaniel Steinrueck. Workplace intelligence for real estate planning at Google through Outer Labs.">
     <title>Google Planning Tool - Nathaniel Steinrueck</title>
+    <meta property="og:title" content="Google Planning Tool - Nathaniel Steinrueck">
+    <meta property="og:description" content="UX research case study: Workplace intelligence for real estate planning at Google.">
+    <meta property="og:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            background: #0F1729;
+        }
+
         .case-study-hero {
-            background: linear-gradient(135deg, #1A4BBA 0%, #0D3082 100%);
-            padding: 120px 0 80px;
+            background: #0F1729;
+            padding: 120px 0 60px;
             text-align: center;
+            border-bottom: 3px solid #4DB5C5;
         }
 
         .case-study-title {
             font-family: 'Syne', sans-serif;
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
-            color: #F0F4F8;
+            color: #FFFFFF;
             margin-bottom: 1rem;
         }
 
         .case-study-subtitle {
             font-size: 1.25rem;
             color: #94A3B8;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .case-study-meta {
             font-size: 1rem;
-            color: #F0F4F8;
+            color: #94A3B8;
             margin-bottom: 0.5rem;
         }
 
@@ -39,6 +50,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
+            background: #0F1729;
         }
 
         .content-section {
@@ -69,7 +81,7 @@
 
         .context-card h4 {
             font-size: 1.25rem;
-            color: #4A9EFF;
+            color: #B8C738;
             margin-bottom: 1rem;
         }
 
@@ -114,7 +126,7 @@
 
         .research-card h4 {
             font-size: 1.25rem;
-            color: #3B82F6;
+            color: #B8C738;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -137,7 +149,7 @@
             content: "→";
             position: absolute;
             left: 0;
-            color: #3B82F6;
+            color: #B8C738;
         }
 
         .hypothesis-list {
@@ -194,8 +206,8 @@
         }
 
         .finding-box {
-            background: rgba(251, 191, 36, 0.1);
-            border-left: 4px solid #FBBF24;
+            background: rgba(184, 199, 56, 0.1);
+            border-left: 4px solid #B8C738;
             padding: 2rem;
             border-radius: 8px;
             margin: 2rem 0;
@@ -241,7 +253,7 @@
 
         .quote-box {
             background: #141B2D;
-            border-left: 4px solid #10B981;
+            border-left: 4px solid #B8C738;
             padding: 1.5rem;
             border-radius: 8px;
             margin: 2rem 0;
@@ -257,7 +269,8 @@
         }
 
         .impact-stat {
-            background: linear-gradient(135deg, #4A9EFF 0%, #1A4BBA 100%);
+            background: #141B2D;
+            border: 2px solid #4DB5C5;
             padding: 2rem;
             border-radius: 12px;
             text-align: center;
@@ -324,7 +337,7 @@
         }
 
         .reflection-card.learning {
-            border-left: 4px solid #3B82F6;
+            border-left: 4px solid #B8C738;
         }
 
         .reflection-card.insight {
@@ -346,14 +359,14 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #4A9EFF;
+            color: #B8C738;
             font-weight: 600;
             margin-bottom: 2rem;
             transition: all 0.3s ease;
         }
 
         .back-link:hover {
-            color: #10B981;
+            color: #4DB5C5;
             transform: translateX(-4px);
         }
 
@@ -368,7 +381,7 @@
             padding: 1.5rem;
             margin-bottom: 1rem;
             background: #0F172A;
-            border-left: 4px solid #4A9EFF;
+            border-left: 4px solid #B8C738;
             border-radius: 8px;
         }
 
@@ -459,7 +472,7 @@
                     <p class="problem-desc">Before committing engineering resources, we needed to validate the design and identify potential barriers to adoption</p>
                 </div>
 
-                <h3 style="color: #4A9EFF; font-size: 1.5rem; margin: 2rem 0 1rem;">Research Goals</h3>
+                <h3 style="color: #B8C738; font-size: 1.5rem; margin: 2rem 0 1rem;">Research Goals</h3>
                 <div class="research-grid">
                     <div class="research-card">
                         <h4>👥 Target Users</h4>
@@ -508,14 +521,14 @@
                     </div>
                 </div>
 
-                <div class="finding-box" style="background: rgba(59, 130, 246, 0.1); border-left-color: #3B82F6;">
+                <div class="finding-box" style="background: rgba(184, 199, 56, 0.1); border-left-color: #B8C738;">
                     <div class="finding-title">Why Post-Session Questionnaire?</div>
                     <p class="finding-desc">Provided clear, quantified results that were easy for the team to digest and prioritize.</p>
                 </div>
 
                 <img src="images/google-planning-tool/research-plan-prototype.png" alt="Research Plan and Clickable Figma Prototype" style="width: 100%; border-radius: 12px; margin: 2rem 0; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
 
-                <h3 style="color: #4A9EFF; font-size: 1.5rem; margin: 2rem 0 1rem;">Critical User Journey</h3>
+                <h3 style="color: #B8C738; font-size: 1.5rem; margin: 2rem 0 1rem;">Critical User Journey</h3>
                 <p style="color: #94A3B8; margin-bottom: 1rem;"><strong>Goal:</strong> Visualize and edit space layouts to align with proposed program</p>
 
                 <div class="journey-steps">
@@ -631,7 +644,7 @@
                     </div>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #4A9EFF 0%, #1A4BBA 100%); padding: 3rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
+                <div style="background: #141B2D; border: 2px solid #4DB5C5; padding: 3rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
                     <div style="font-size: 4rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">1</div>
                     <div style="color: rgba(255, 255, 255, 0.9); font-weight: 600; font-size: 1.25rem;">Day Turnaround</div>
                     <div style="color: rgba(255, 255, 255, 0.7); margin-top: 0.5rem;">From insight to redesign</div>
@@ -646,7 +659,7 @@
                         <div class="impact-number">160</div>
                         <div class="impact-label">Engineering hours saved</div>
                     </div>
-                    <div class="impact-stat" style="background: linear-gradient(135deg, #64748B 0%, #475569 100%);">
+                    <div class="impact-stat">
                         <div class="impact-number">5/5</div>
                         <div class="impact-label">Key issues identified</div>
                     </div>

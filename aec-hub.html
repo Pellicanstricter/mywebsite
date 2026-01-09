@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AEC Hub - Knowledge platform for architecture, engineering, and construction professionals. Built by Nathaniel Steinrueck with Next.js and React.">
     <title>AEC Hub - Nathaniel Steinrueck</title>
+    <meta property="og:title" content="AEC Hub - Nathaniel Steinrueck">
+    <meta property="og:description" content="Knowledge platform for architecture, engineering, and construction professionals with 200+ curated tools.">
+    <meta property="og:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            background: #0F1729;
+        }
+
         .case-study-hero {
-            background: linear-gradient(135deg, #2C5F7C 0%, #1A3A4D 100%);
-            padding: 120px 0 80px;
+            background: #0F1729;
+            padding: 120px 0 60px;
             text-align: center;
+            border-bottom: 3px solid #4DB5C5;
         }
 
         .case-study-title {
             font-family: 'Syne', sans-serif;
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
-            color: #F0F4F8;
+            color: #FFFFFF;
             margin-bottom: 1rem;
         }
 
         .case-study-subtitle {
             font-size: 1.25rem;
             color: #94A3B8;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .case-study-meta {
             font-size: 1rem;
-            color: #F0F4F8;
+            color: #94A3B8;
             margin-bottom: 0.5rem;
         }
 
@@ -39,6 +50,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
+            background: #0F1729;
         }
 
         .content-section {
@@ -89,7 +101,7 @@
         }
 
         .feature-card:hover {
-            border-color: #2C5F7C;
+            border-color: #FF9933;
             transform: translateY(-4px);
         }
 
@@ -100,7 +112,7 @@
 
         .feature-title {
             font-size: 1.25rem;
-            color: #5BA3D0;
+            color: #FF9933;
             margin-bottom: 1rem;
             font-weight: 700;
         }
@@ -118,8 +130,8 @@
         }
 
         .tech-badge {
-            background: rgba(44, 95, 124, 0.2);
-            color: #5BA3D0;
+            background: rgba(255, 153, 51, 0.2);
+            color: #FF9933;
             padding: 0.5rem 1rem;
             border-radius: 6px;
             font-weight: 600;
@@ -134,7 +146,8 @@
         }
 
         .impact-stat {
-            background: linear-gradient(135deg, #2C5F7C 0%, #1A3A4D 100%);
+            background: #141B2D;
+            border: 2px solid #4DB5C5;
             padding: 2rem;
             border-radius: 12px;
             text-align: center;
@@ -161,19 +174,19 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #5BA3D0;
+            color: #FF9933;
             font-weight: 600;
             margin-bottom: 2rem;
             transition: all 0.3s ease;
         }
 
         .back-link:hover {
-            color: #10B981;
+            color: #E85D75;
             transform: translateX(-4px);
         }
 
         .cta-box {
-            background: linear-gradient(135deg, #2C5F7C 0%, #1A3A4D 100%);
+            background: linear-gradient(135deg, #FF9933 0%, #E85D75 100%);
             padding: 3rem;
             border-radius: 12px;
             text-align: center;
@@ -195,7 +208,7 @@
         .cta-button {
             display: inline-block;
             background: white;
-            color: #2C5F7C;
+            color: #1A1A1A;
             padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: 700;
@@ -218,14 +231,14 @@
 
         .pillar-card {
             background: #141B2D;
-            border-left: 4px solid #5BA3D0;
+            border-left: 4px solid #FF9933;
             border-radius: 12px;
             padding: 2rem;
         }
 
         .pillar-number {
             display: inline-block;
-            background: #2C5F7C;
+            background: #FF9933;
             color: white;
             width: 2.5rem;
             height: 2.5rem;
@@ -239,7 +252,7 @@
         .pillar-title {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #5BA3D0;
+            color: #FF9933;
             margin-bottom: 1rem;
         }
 
@@ -284,7 +297,7 @@
         <div class="case-study-content">
             <!-- Live Product CTA -->
             <section class="content-section" style="text-align: center; margin-bottom: 2rem;">
-                <div style="background: linear-gradient(135deg, #2C5F7C 0%, #1A3A4D 100%); padding: 2rem; border-radius: 12px; display: inline-block;">
+                <div style="background: #141B2D; border: 2px solid #4DB5C5; padding: 2rem; border-radius: 12px; display: inline-block;">
                     <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem; font-size: 1.125rem;">🏗️ Live Platform — Explore now</p>
                     <a href="https://www.aechub.org/" target="_blank" class="cta-button" style="display: inline-block; margin: 0;">Visit aechub.org →</a>
                 </div>
@@ -380,12 +393,12 @@
                         <div class="impact-label">Curated Tools</div>
                         <div class="impact-sublabel">Across all AEC categories</div>
                     </div>
-                    <div class="impact-stat" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                    <div class="impact-stat">
                         <div class="impact-number">1000+</div>
                         <div class="impact-label">Monthly Users</div>
                         <div class="impact-sublabel">AEC professionals</div>
                     </div>
-                    <div class="impact-stat" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);">
+                    <div class="impact-stat">
                         <div class="impact-number">3</div>
                         <div class="impact-label">Revenue Streams</div>
                         <div class="impact-sublabel">Sponsorships, ads, consulting</div>

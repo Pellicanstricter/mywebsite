@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medicare Trust Engine - UX research case study by Nathaniel Steinrueck. Doubled digital enrollments at UnitedHealthcare through personalized routing and A/B testing.">
     <title>Medicare Trust Engine - Nathaniel Steinrueck</title>
+    <meta property="og:title" content="Medicare Trust Engine - Nathaniel Steinrueck">
+    <meta property="og:description" content="UX research case study: Doubled digital enrollments through personalized routing and A/B testing.">
+    <meta property="og:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            background: #0F1729;
+        }
+
         .case-study-hero {
-            background: linear-gradient(135deg, #0A0F1B 0%, #1A2538 100%);
-            padding: 120px 0 80px;
+            background: #0F1729;
+            padding: 120px 0 60px;
             text-align: center;
+            border-bottom: 3px solid #4DB5C5;
         }
 
         .case-study-title {
             font-family: 'Syne', sans-serif;
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
-            color: #F0F4F8;
+            color: #FFFFFF;
             margin-bottom: 1rem;
         }
 
         .case-study-subtitle {
             font-size: 1.25rem;
             color: #94A3B8;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .case-study-meta {
             font-size: 1rem;
-            color: #64748B;
+            color: #94A3B8;
             margin-bottom: 0.5rem;
         }
 
@@ -39,6 +50,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
+            background: #0F1729;
         }
 
         .content-section {
@@ -96,7 +108,7 @@
 
         .research-card h4 {
             font-size: 1.25rem;
-            color: #3B82F6;
+            color: #4DB5C5;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -119,7 +131,7 @@
             content: "→";
             position: absolute;
             left: 0;
-            color: #3B82F6;
+            color: #4DB5C5;
         }
 
         .hypothesis-list {
@@ -131,7 +143,7 @@
 
         .hypothesis-item {
             background: #141B2D;
-            border-left: 4px solid #3B82F6;
+            border-left: 4px solid #4DB5C5;
             padding: 1.5rem;
             border-radius: 8px;
         }
@@ -198,7 +210,7 @@
 
         .quote-box {
             background: #141B2D;
-            border-left: 4px solid #10B981;
+            border-left: 4px solid #4DB5C5;
             padding: 1.5rem;
             border-radius: 8px;
             margin: 2rem 0;
@@ -214,7 +226,8 @@
         }
 
         .impact-stat {
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            background: #141B2D;
+            border: 2px solid #4DB5C5;
             padding: 2rem;
             border-radius: 12px;
             text-align: center;
@@ -281,7 +294,7 @@
         }
 
         .reflection-card.learning {
-            border-left: 4px solid #3B82F6;
+            border-left: 4px solid #4DB5C5;
         }
 
         .reflection-card.insight {
@@ -315,7 +328,7 @@
         }
 
         .additional-card:hover {
-            border-color: #3B82F6;
+            border-color: #4DB5C5;
             transform: translateY(-4px);
         }
 
@@ -336,7 +349,7 @@
         }
 
         .additional-solution {
-            color: #10B981;
+            color: #4DB5C5;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -347,14 +360,14 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #3B82F6;
+            color: #4DB5C5;
             font-weight: 600;
             margin-bottom: 2rem;
             transition: all 0.3s ease;
         }
 
         .back-link:hover {
-            color: #10B981;
+            color: #FF9933;
             transform: translateX(-4px);
         }
 
@@ -525,7 +538,7 @@
                     </div>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); padding: 3rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
+                <div style="background: #141B2D; border: 2px solid #4DB5C5; padding: 3rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
                     <div style="font-size: 4rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">40%</div>
                     <div style="color: rgba(255, 255, 255, 0.9); font-weight: 600; font-size: 1.25rem;">Completion rate achieved</div>
                     <div style="color: rgba(255, 255, 255, 0.7); margin-top: 0.5rem;">74% relative improvement</div>
@@ -573,7 +586,7 @@
                         <div class="impact-label">Relative improvement</div>
                         <div class="impact-sublabel">(from 23% to 40%)</div>
                     </div>
-                    <div class="impact-stat" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);">
+                    <div class="impact-stat">
                         <div class="impact-number">4</div>
                         <div class="impact-label">Major features shipped</div>
                         <div class="impact-sublabel">During enrollment</div>
