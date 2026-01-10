@@ -29,23 +29,24 @@
             gap: 40px;
         }
         
-        /* Standard business card: 3.5" x 2" at 300 DPI = 1050px x 600px */
+        /* Banner format: Wide and short */
         .business-card {
-            width: 1050px;
-            height: 600px;
+            width: 1800px;
+            height: 400px;
             background: #0F1729;
-            border-radius: 20px;
+            border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
         }
-        
+
         /* Front of card */
         .card-front {
-            padding: 60px;
+            padding: 40px 80px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             height: 100%;
         }
         
@@ -60,50 +61,53 @@
         }
         
         .logo {
-            font-size: 80px;
+            font-size: 60px;
             font-weight: 700;
             color: #4DB5C5;
             letter-spacing: -2px;
+            flex-shrink: 0;
         }
-        
+
         .card-info {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
+            flex-grow: 1;
+            margin-left: 60px;
         }
-        
+
         .name {
-            font-size: 52px;
+            font-size: 36px;
             font-weight: 700;
             color: #F0F4F8;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
-        
+
         .title {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 600;
             color: #4DB5C5;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             line-height: 1.3;
         }
-        
+
         .contact-info {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
+            flex-direction: row;
+            gap: 30px;
         }
-        
+
         .contact-item {
-            font-size: 22px;
+            font-size: 16px;
             color: #94A3B8;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
-        
+
         .contact-icon {
             color: #4DB5C5;
-            width: 24px;
+            width: 16px;
         }
         
         /* Back of card */
@@ -148,7 +152,7 @@
         }
         
         .print-instructions {
-            max-width: 1050px;
+            max-width: 1800px;
             background: white;
             padding: 30px;
             border-radius: 10px;
@@ -219,7 +223,7 @@
                 <div class="card-info">
                     <div>
                         <div class="name">Nathaniel Steinrueck</div>
-                        <div class="title">We Build Custom AI Agents That Know Your Business</div>
+                        <div class="title">We Build Custom AI for Your Business</div>
                     </div>
                     <div class="contact-info">
                         <div class="contact-item">
@@ -237,17 +241,16 @@
     </div>
     
     <div class="print-instructions">
-        <h2>📄 Printing Instructions</h2>
-        <p><strong>Standard Business Card Size:</strong> 3.5" × 2" (89mm × 51mm)</p>
-        <p><strong>How to print:</strong></p>
+        <h2>📄 Usage Instructions</h2>
+        <p><strong>Banner Size:</strong> 1800px × 400px (ideal for email signatures, LinkedIn banners, and digital use)</p>
+        <p><strong>How to use:</strong></p>
         <ul>
-            <li>Print at 300 DPI for best quality</li>
-            <li>Use heavy cardstock (14pt or 16pt recommended)</li>
-            <li>Single-sided design (no back needed)</li>
-            <li>Consider professional printing services like Vistaprint, Moo, or local print shops</li>
-            <li>Add 1/8" bleed if using professional printing</li>
+            <li>Right-click on the banner to "Save Image As" for digital use</li>
+            <li>Perfect for email signatures, website headers, or social media</li>
+            <li>Can be scaled down for smaller uses while maintaining clarity</li>
+            <li>For printing: Use professional printing services with banner dimensions</li>
         </ul>
-        <p><strong>Digital Use:</strong> Right-click on the card to "Save Image As" for sharing digitally or use as email signature</p>
+        <p><strong>Digital Use:</strong> Use as LinkedIn banner, email signature, or website header</p>
     </div>
 </body>
 </html>
