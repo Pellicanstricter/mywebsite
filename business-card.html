@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card - Nathaniel Steinrueck</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        /* Standard business card: 3.5" x 2" at 300 DPI = 1050px x 600px */
+        .business-card {
+            width: 1050px;
+            height: 600px;
+            background: #0F1729;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Front of card */
+        .card-front {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        
+        .card-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4DB5C5 0%, #B8C738 100%);
+        }
+        
+        .logo {
+            font-size: 80px;
+            font-weight: 700;
+            color: #4DB5C5;
+            letter-spacing: -2px;
+        }
+        
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .name {
+            font-size: 52px;
+            font-weight: 700;
+            color: #F0F4F8;
+            margin-bottom: 8px;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #4DB5C5;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .contact-item {
+            font-size: 22px;
+            color: #94A3B8;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            color: #4DB5C5;
+            width: 24px;
+        }
+        
+        /* Back of card */
+        .card-back {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            background: linear-gradient(135deg, #0F1729 0%, #1a2332 100%);
+        }
+        
+        .tagline {
+            font-size: 36px;
+            font-weight: 600;
+            color: #F0F4F8;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #4DB5C5 0%, #B8C738 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .services {
+            font-size: 24px;
+            color: #94A3B8;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        
+        .industries {
+            font-size: 20px;
+            color: #4DB5C5;
+            margin-top: 40px;
+            font-weight: 600;
+        }
+        
+        .print-instructions {
+            max-width: 1050px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .print-instructions h2 {
+            color: #0F1729;
+            margin-bottom: 15px;
+        }
+        
+        .print-instructions p {
+            color: #4A5568;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .print-instructions ul {
+            color: #4A5568;
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .print-instructions {
+                display: none;
+            }
+            
+            .card-container {
+                gap: 0;
+            }
+            
+            .business-card {
+                page-break-after: always;
+                box-shadow: none;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .business-card {
+                transform: scale(0.8);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .business-card {
+                transform: scale(0.6);
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .business-card {
+                transform: scale(0.4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <!-- Front of Card -->
+        <div class="business-card">
+            <div class="card-front">
+                <div class="logo">NS</div>
+                <div class="card-info">
+                    <div>
+                        <div class="name">Nathaniel Steinrueck</div>
+                        <div class="title">BI & AI Strategy</div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">✉</span>
+                            <span>steinrueckn@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🌐</span>
+                            <span>nathanielsteinrueck.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back of Card -->
+        <div class="business-card">
+            <div class="card-back">
+                <div class="tagline">
+                    We Build the <span class="gradient-text">AI & Tools</span><br>
+                    Your Business Actually Needs
+                </div>
+                <div class="services">
+                    Custom AI Applications • Data Intelligence • Workflow Automation
+                </div>
+                <div class="industries">
+                    Architecture & Construction • Health & Wellness
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="print-instructions">
+        <h2>📄 Printing Instructions</h2>
+        <p><strong>Standard Business Card Size:</strong> 3.5" × 2" (89mm × 51mm)</p>
+        <p><strong>How to print:</strong></p>
+        <ul>
+            <li>Print at 300 DPI for best quality</li>
+            <li>Use heavy cardstock (14pt or 16pt recommended)</li>
+            <li>Front card prints first, back card prints second</li>
+            <li>Consider professional printing services like Vistaprint, Moo, or local print shops</li>
+            <li>Add 1/8" bleed if using professional printing</li>
+        </ul>
+        <p><strong>Digital Use:</strong> Right-click on each card to "Save Image As" for sharing digitally</p>
+    </div>
+</body>
+</html>
