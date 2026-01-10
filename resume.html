@@ -16,26 +16,28 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .resume-hero {
-            background: linear-gradient(135deg, #4DB5C5 0%, #B8C738 100%);
+            background: #0F1729;
             padding: 120px 0 80px;
             text-align: center;
+            border-bottom: 3px solid #4DB5C5;
         }
 
         .resume-title {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
             color: #F0F4F8;
             margin-bottom: 1rem;
         }
 
         .resume-subtitle {
-            font-size: 1.25rem;
-            color: #F0F4F8;
+            font-size: 1.125rem;
+            color: #94A3B8;
             margin-bottom: 2rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
 
         .resume-actions {
@@ -49,19 +51,30 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: white;
-            color: #1A1A1A;
+            background: #4DB5C5;
+            color: #0F1729;
             padding: 1rem 2rem;
             border-radius: 8px;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .download-btn:hover {
-            background: #F0F4F8;
+            background: #3da4b4;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn-secondary {
+            background: transparent;
+            border: 2px solid #4DB5C5;
+            color: #4DB5C5;
+        }
+
+        .download-btn-secondary:hover {
+            background: rgba(77, 181, 197, 0.1);
+            border-color: #3da4b4;
+            color: #3da4b4;
         }
 
         .resume-content {
@@ -237,7 +250,7 @@
                     <a href="Nathaniel_Steinrueck_Resume.pdf" download class="download-btn">
                         📄 Download PDF Resume
                     </a>
-                    <a href="mailto:steinrueckn@gmail.com" class="download-btn" style="background: transparent; border: 2px solid white; color: white;">
+                    <a href="mailto:steinrueckn@gmail.com" class="download-btn download-btn-secondary">
                         ✉️ Contact Me
                     </a>
                 </div>
