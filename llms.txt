@@ -1,0 +1,38 @@
+# Nate Steinrueck
+
+> UX Researcher who builds. Leads research for complex products, then designs, prototypes, and ships the solutions. Full-stack AI tools, production features, and everything in between.
+
+Currently leading product research at IQVIA. Previously at Google (via Outer Labs), UnitedHealthcare (via RVO Health), and cove.tool. Based in Atlanta, GA.
+
+50+ studies across healthcare, enterprise software, and design technology. Builds full-stack applications, AI agents, data pipelines, and production features.
+
+## Portfolio
+
+- [Home](https://www.nathanielsteinrueck.com/): Overview of work, writing, and background
+- [Medicare Trust Engine](https://www.nathanielsteinrueck.com/medicare-trust-engine.html): Doubled digital enrollments at UnitedHealthcare through trust barrier research and personalized routing redesign
+- [Google Planning Tool](https://www.nathanielsteinrueck.com/google-planning-tool.html): Led research for AI-powered generative space planning tools at Google
+- [UX Research Copilot](https://www.nathanielsteinrueck.com/ux-research-copilot.html): Multi-agent AI system for research synthesis (Python, FastAPI, React, GPT-4, FAISS)
+- [AEC Hub](https://www.nathanielsteinrueck.com/aec-hub.html): Intelligence platform for architecture and construction industry (Next.js, Supabase)
+- [Reno AI](https://www.nathanielsteinrueck.com/reno-ai.html): iOS app with computer vision for home redesign (Swift, CoreML, ARKit)
+
+## Blog
+
+- [AI-Augmented UX Research](https://www.nathanielsteinrueck.com/blog/ai-augmented-ux-research.html): Turning research findings from one-time deliverables into living knowledge systems using AI-powered insights bots and custom research copilots
+- [Evals Are the New Design Critique](https://www.nathanielsteinrueck.com/blog/evals-design-critique.html): Building resilient AI systems through evaluation-driven development, connecting Andrew Ng's agentic AI patterns to design critique practices
+
+## Tech Stack
+
+Engineering: Python, React, Next.js, FastAPI
+AI: GPT-4, Claude, FAISS, CoreML
+Research: Dovetail, Maze, Mixpanel
+
+## Contact
+
+- Email: steinrueckn@gmail.com
+- LinkedIn: https://linkedin.com/in/nathanielsteinrueck
+- Location: Atlanta, GA
+
+## Optional
+
+- [Resume](https://www.nathanielsteinrueck.com/resume.html): Full work history, education, and skills
+- [Full Content](https://www.nathanielsteinrueck.com/llms-full.txt): Complete site content in a single file

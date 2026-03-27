@@ -1,0 +1,173 @@
+# Nate Steinrueck - Full Site Content
+
+> UX Researcher who builds. Leads research for complex products, then designs, prototypes, and ships the solutions. Full-stack AI tools, production features, and everything in between.
+
+---
+
+## About
+
+I'm a UX researcher who builds end-to-end.
+
+Most researchers hand off findings and hope something ships. I lead the research -- 50+ studies across healthcare, enterprise software, and design technology -- then I build. Full-stack applications, AI agents, data pipelines, production features. Not prototypes-to-prove-a-point. Working software that solves the problem the research identified.
+
+I got here through an unusual path. I started in architecture -- designing buildings, managing construction projects in Central America, teaching computational design. That background gave me a bias toward making things, not just analyzing them. When I moved into product research, I brought the builder's instinct with me.
+
+The tools I work with reflect that range: Python, React, Next.js on the engineering side. FastAPI, GPT-4, Claude, FAISS, CoreML on the AI side. Dovetail, Maze, Mixpanel, and good old spreadsheets on the research side. I don't think of these as separate skill sets. They're how I close the gap between insight and implementation.
+
+Based in Atlanta. Currently at IQVIA. Interested in roles where research and building aren't separate departments.
+
+---
+
+## Research Projects
+
+### Medicare Trust Engine
+UnitedHealthcare | 2024 | Lead UX Researcher
+
+Doubled digital enrollments by identifying trust barriers and redesigning personalized routing logic. 20+ studies across A/B testing, usability, content testing, and surveys.
+
+**Problem:** 51% drop-off at personal information page during the critical Annual Enrollment Period.
+
+**Research:** 15 moderated usability test participants (age 65+). Tested live enrollment flows across three websites. Analyzed 2024 Annual Enrollment Period data.
+
+**Key Finding:** Users needed to browse BEFORE sharing personal information. 11 out of 15 participants preferred exploring plans first -- typical shopping behavior that had been overlooked.
+
+**Impact:** 74% relative improvement in completion rate (from 23% to 40%). 4 major features shipped during enrollment. Changes implemented within 24 hours of insight.
+
+### Google Workplace Planning Tool
+Google (via Outer Labs) | 2022-2024 | Lead UX Researcher & Product Strategist
+
+Led research for AI-powered generative space planning tools. 14+ studies unblocking 50% of the target user base and informing 20+ feature improvements.
+
+**Problem:** High uncertainty that new merged planning tool designs would meet user needs before committing engineering resources.
+
+**Research:** Usability testing with clickable prototype. Post-session surveys. 6 participants (2 Executive, 2 Project Managers, 2 Designers).
+
+**Key Finding:** Floor plan preview distracted users during setup. 6/6 participants mentioned confusion with auto-generated floor plan.
+
+**Impact:** 160 engineering hours saved. 5/5 key issues identified. 1-day turnaround from insight to redesign.
+
+### Clinical Trial eCOA Platforms
+IQVIA | 2025-Present | UX Researcher
+
+Leading end-to-end research and feature delivery for B2B clinical trial products. Designing and shipping production features using AI-native workflows.
+
+---
+
+## Build Projects
+
+### UX Research Copilot
+Side Project | 2025 | Built End-to-End
+
+Multi-agent AI system that synthesizes research data across documents, transcripts, and notes.
+
+**Tech Stack:** Python, FastAPI, Streamlit, GPT-3.5 Turbo, LangChain, Redis, Docker, Railway, FAISS
+
+**Architecture:** Four specialized AI agents processing data sequentially:
+1. DocumentIngestor -- Processes files and creates manageable text chunks
+2. InsightAnalyzer -- Extracts quotes, themes, sentiment, and confidence scores
+3. ThemeSynthesizer -- Groups related insights and generates thematic summaries
+4. OutputFormatter -- Creates structured reports and downloadable deliverables
+
+**Impact:** 80% time saved (hours to minutes). 2-5 minutes processing time per session. 4 auto-generated report types.
+
+**Live:** https://www.uxrcopilot.com/
+
+### AEC Hub
+Side Project | 2025 | Built End-to-End
+
+Intelligence platform for the architecture and construction industry. Real-time data dashboards, original research, and automated content pipelines.
+
+**Tech Stack:** Next.js, TypeScript, Tailwind CSS, Supabase, Vercel, Stripe
+
+**Impact:** 200+ curated tools. 1000+ monthly users. 3 revenue streams.
+
+**Live:** https://www.aechub.org/
+
+### AI Customer Service Agent
+Client Project | 2025
+
+Custom AI agent handling scheduling, product questions, and service routing for a small business. FastAPI backend, Claude API, Telegram integration. Production deployment.
+
+### Reno AI
+Side Project | 2025 | Built End-to-End
+
+iOS app with computer vision for home redesign. Scan your room, get AI analysis of layout/lighting/flow, visualize recommendations in AR.
+
+**Tech Stack:** Swift, ARKit, RealityKit, CoreML, Computer Vision, GPT-4
+
+---
+
+## Work Experience
+
+### IQVIA -- UX Researcher
+2025-Present | Remote
+Leading end-to-end research and feature delivery for B2B clinical trial products. Designing and shipping production features using AI-native workflows.
+
+### RVO Health (UnitedHealthcare) -- UX Researcher
+Sep 2024 - 2025 | Remote
+20+ mixed-methods studies. Built custom AI-powered research workflow reducing cycles from 3 weeks to 1 week (66% improvement). Created user personas and journey maps that boosted plan completion rates by 367%.
+
+### Google (via Outer Labs) -- UX Researcher & Product Strategist
+Sep 2022 - May 2024 | Remote
+Led end-to-end UX research for AI-powered workplace intelligence tools. 14+ comprehensive studies. Enabled 50% of previously blocked users to complete core workflows.
+
+### cove.tool -- Design Researcher
+Jan 2022 - Sep 2022 | Atlanta, GA
+User research for cost estimation tool launch. Increased user satisfaction by 20%. Onboarded 200+ customers.
+
+### Earlier Experience
+- Designer, Houser Walker Architecture (2021-2022)
+- Designer, Duda|Paine Architects (2019)
+- Designer, HH Architecture (2018)
+- Digital Fabrication Manager, Green Mountain College (2015-2017)
+- Co-Founder, Meiker Design Build, Guatemala (2013-2015)
+
+## Education
+
+- Masters in Architecture, North Carolina State University (GPA: 4.0, 2017-2020)
+  - AIA Henry Adams Medal, M.Arch Award for Design Achievement
+- B.A. in Design, Green Mountain College (GPA: 3.46, 2009-2013)
+
+## Contact
+
+- Email: steinrueckn@gmail.com
+- LinkedIn: https://linkedin.com/in/nathanielsteinrueck
+- Location: Atlanta, GA
+- Website: https://www.nathanielsteinrueck.com
+
+## Frequently Asked Questions
+
+**What does Nate Steinrueck do?**
+He is a UX researcher who builds end-to-end. He leads research for complex products at companies like IQVIA, Google, and UnitedHealthcare -- then designs, prototypes, and ships the solutions. He builds full-stack AI tools, multi-agent systems, and production features.
+
+**What has he built?**
+UX Research Copilot (multi-agent AI system, Python/FastAPI/React/GPT-4/FAISS), AEC Hub (intelligence platform, Next.js/Supabase), AI Customer Service Agent (agentic AI, Claude API, production deployment), and Reno AI (iOS app, Swift/CoreML/ARKit).
+
+**What is his tech stack?**
+Python, React, Next.js, FastAPI on the engineering side. GPT-4, Claude, FAISS, CoreML on the AI side. Dovetail, Maze, Mixpanel on the research side. He treats these as one integrated skill set.
+
+**Where does he work?**
+Currently leading product research at IQVIA. Previously at Google (via Outer Labs), UnitedHealthcare (via RVO Health), and cove.tool. Based in Atlanta, GA.
+
+**What is he looking for?**
+Roles where research and building aren't separate departments. Conversations at the intersection of research and AI -- where understanding users and building intelligent systems are the same job.
+
+---
+
+## Blog Posts
+
+### AI-Augmented UX Research: Turning Insights Into Organizational Knowledge
+
+Research teams have never been better at conducting studies. But there's a persistent gap between generating those insights and making them accessible when decisions are actually being made. The real opportunity right now isn't adopting the latest AI moderator tool. It's transforming research findings from one-time deliverables into living knowledge systems -- insights that are discoverable at the exact moment a PM, designer, or stakeholder needs them.
+
+This article covers building an AI-powered insights bot in Slack, prototyping a UX Research Copilot from scratch, and practical approaches for choosing the right tools (Cassidy AI, Dovetail, Marvin, ChatGPT Projects). The key insight: the value isn't in the sophistication of the AI -- it's in making research findable at the exact moment someone needs it.
+
+URL: https://www.nathanielsteinrueck.com/blog/ai-augmented-ux-research.html
+
+### Evals Are the New Design Critique: Building Resilient AI Systems Through Evaluation-Driven Development
+
+Most teams building with AI are guessing. They ship an agent, cross their fingers, and wait for user complaints to tell them what broke. This article connects Andrew Ng's four agentic AI patterns (reflection, tool use, planning, multi-agent collaboration) to the practice of design critique and structured evaluation.
+
+Key framework: lead with failure modes, layer eval types (code-based, LLM-as-judge, human), eval the chain not just the output, grow your eval suite from production failures, and make it collaborative. The discipline of design critique transfers directly to building resilient AI systems.
+
+URL: https://www.nathanielsteinrueck.com/blog/evals-design-critique.html
