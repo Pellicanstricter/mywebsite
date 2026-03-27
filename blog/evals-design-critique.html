@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building resilient AI systems through evaluation-driven development. How the discipline of design critique translates directly to AI evals.">
+    <title>Evals Are the New Design Critique - Nathaniel Steinrueck</title>
+    <meta property="og:title" content="Evals Are the New Design Critique: Building Resilient AI Systems Through Evaluation-Driven Development">
+    <meta property="og:description" content="Building resilient AI systems through evaluation-driven development.">
+    <meta property="og:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
+    <link rel="canonical" href="https://www.nathanielsteinrueck.com/blog/evals-design-critique.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=1002">
+    <link rel="stylesheet" href="../css/case-study.css?v=2">
+    <link rel="stylesheet" href="../css/blog.css?v=1">
+    <style>
+        .password-gate {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .password-gate h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        .password-gate p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .password-input-group {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .password-input-group input {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--border-medium);
+            border-radius: 6px;
+            outline: none;
+            width: 200px;
+        }
+        .password-input-group input:focus {
+            border-color: var(--text-primary);
+        }
+        .password-input-group button {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.6rem 1.25rem;
+            background: var(--text-primary);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .password-input-group button:hover {
+            opacity: 0.8;
+        }
+        .password-error {
+            color: #dc2626;
+            font-size: 0.85rem;
+            margin-top: 0.75rem;
+            display: none;
+        }
+        .article-hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">Nate Steinrueck</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#work" class="nav-link">Work</a></li>
+                <li><a href="../blog.html" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li><a href="../index.html#contact" class="nav-link cta-nav">Say Hello</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="article-hero">
+            <div class="container">
+                <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+                <span class="article-tag">AI + Strategy</span>
+                <h1 class="article-title">Evals Are the New Design Critique: Building Resilient AI Systems Through Evaluation-Driven Development</h1>
+            </div>
+        </section>
+
+        <!-- Password Gate -->
+        <div id="passwordGate" class="password-gate">
+            <h2>This article is password-protected</h2>
+            <p>Reach out to request access.</p>
+            <div class="password-input-group">
+                <input type="password" id="passwordInput" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPassword()">
+                <button onclick="checkPassword()">Unlock</button>
+            </div>
+            <p class="password-error" id="passwordError">Incorrect password. Try again.</p>
+        </div>
+
+        <!-- Article Content (hidden until unlocked) -->
+        <div id="articleContent" class="article-hidden">
+            <div class="article-content">
+                <p>
+                    Most teams building with AI are guessing. They ship an agent, cross their fingers, and wait for user complaints to tell them what broke. It's the equivalent of launching a product without ever talking to a user -- and somehow, in 2026, it's still the default.
+                </p>
+                <p>
+                    I've spent the past decade moving between architecture, UX research, and product strategy -- working on everything from Google's workplace tools to healthcare enrollment systems to AI-powered design workflows. The pattern I keep running into is teams that pour energy into model selection and prompt engineering while almost entirely neglecting the thing that actually determines whether their system holds up under pressure: structured evaluation.
+                </p>
+                <p>
+                    In the agentic AI space, we call these evals. Andrew Ng calls them the single biggest differentiator between teams that ship reliable agents and those that don't. In his Agentic AI course, he put it bluntly -- the biggest predictor of execution quality isn't prompt engineering wizardry or model choice. It's the ability to drive a disciplined process for evals and error analysis.
+                </p>
+                <p>
+                    That clicked for me immediately. Back in architecture school, I spent more hours in critique than at my drafting desk. The pin-up, the desk crit, the jury review -- those weren't afterthoughts. They were the mechanism that turned ambitious sketches into buildings that could actually stand. The parallel to AI evals is almost uncanny.
+                </p>
+
+                <h2>What Evals Are and Why They Matter</h2>
+                <p>
+                    Evaluations are systematic methods for measuring whether an AI system does what it should. There are three core types: code-based evals that programmatically verify outputs against known correct answers, human evaluations where people assess quality and nuance, and LLM-as-judge evals that use one model to assess another's reasoning and outputs.
+                </p>
+                <p>
+                    If you've ever facilitated a heuristic evaluation on a UI or run a structured design critique, this logic is already in your bones. You define what "good" looks like, then you measure the work against that standard. Evals are the same discipline, applied to a different medium.
+                </p>
+                <p>
+                    The mistake most teams make is treating evaluation as a launch gate -- a one-time checkpoint. That's like running a single usability test and calling the product done. Systems that hold up under real conditions need continuous evaluation, the same way products that serve real users need ongoing research.
+                </p>
+
+                <h2>Ng's Four Agentic Patterns (And Where They Break)</h2>
+                <p>
+                    Andrew Ng's framework identifies four design patterns for agentic AI. Each one creates specific failure modes -- which is exactly why each one needs its own evaluation strategy.
+                </p>
+                <p>
+                    <strong>Reflection</strong> is built-in self-critique: an agent reviews its own output and refines it before responding. Research from DeepLearning.AI demonstrates that GPT-3.5 with agentic techniques like reflection can score in the high 70s to 90s on coding benchmarks -- matching or exceeding GPT-4's zero-shot performance. The system architecture outweighs the raw model. But reflection without evals is just an agent agreeing with itself.
+                </p>
+                <p>
+                    <strong>Tool use</strong> lets agents call APIs, execute code, search databases, and verify information against external sources. Every tool call is a potential failure point -- a timeout, a malformed query, a hallucinated function name. These need targeted evals.
+                </p>
+                <p>
+                    <strong>Planning</strong> is task decomposition at the system level: an LLM breaking a complex request into subtasks before executing. It's the same muscle a product strategist uses when scoping a workstream -- and I lean on it constantly. But without evaluation on the planning step itself, an agent can flawlessly execute a plan that was wrong from the start.
+                </p>
+                <p>
+                    <strong>Multi-agent collaboration</strong> distributes work across specialized agents -- one researches, one drafts, one reviews. The parallel to cross-functional teams is obvious, and so is the governance challenge. Every handoff between agents is a seam where quality can slip.
+                </p>
+
+                <h2>Why This Should Feel Familiar to Designers</h2>
+                <p>
+                    Here's what keeps striking me: the people I see building the most resilient AI systems don't always have the deepest engineering backgrounds. They think like researchers. They instinctively distrust outputs, build feedback loops, and treat every interaction as a data point worth examining.
+                </p>
+                <p>
+                    Design thinking follows the same rhythm -- define, prototype, test, refine, repeat. Evaluation-driven development is that cycle applied to agent behavior. Instead of testing wireframes with users, you're testing agent decisions against defined criteria. Instead of a critique where colleagues challenge your rationale, you're building automated systems that challenge your agent's rationale.
+                </p>
+                <p>
+                    The discipline transfers directly. If structured critique and iterative refinement are already how you work, you have a real advantage here.
+                </p>
+
+                <h2>A Framework I Keep Coming Back To</h2>
+                <p>
+                    This is the evaluation approach I've been developing while building AI tools -- and honestly, it's just the design critique process translated into a new context:
+                </p>
+                <p>
+                    <strong>Lead with failure modes.</strong> Before building anything, identify the three worst outcomes your agent could produce. Write evals for those first. Everything else is secondary until you've guarded against the catastrophic stuff.
+                </p>
+                <p>
+                    <strong>Layer your eval types.</strong> Code-based checks handle anything with a verifiable answer. LLM-as-judge covers open-ended quality. Human evaluation handles the highest-stakes calls -- and calibrates the automated layers beneath it.
+                </p>
+                <p>
+                    <strong>Eval the chain, not just the output.</strong> In multi-step workflows, a polished final deliverable can conceal a broken intermediate step. Test the plan, the tool calls, the reasoning -- not just what the user sees.
+                </p>
+                <p>
+                    <strong>Grow your eval suite from production failures.</strong> Every real-world failure becomes a new test case. Over time, your evaluation library becomes an institutional memory of everything that's gone wrong -- and a guarantee it won't happen the same way again.
+                </p>
+                <p>
+                    <strong>Make it collaborative.</strong> The best design critiques work because different perspectives catch different blind spots. Same principle -- domain experts, end users, and engineers should all have a hand in defining what "good" means.
+                </p>
+
+                <h2>Where This Is Heading</h2>
+                <p>
+                    We're watching AI systems cross from answering questions to completing entire tasks autonomously. Agents now search, compare, reason, and execute on behalf of users. Trust is the bottleneck, and the teams that earn it won't be the ones with the most powerful models. They'll be the ones with the most disciplined evaluation practices.
+                </p>
+                <p>
+                    Ng is right that evals are the differentiator. I'd go further -- evals are the design critique of the AI era. They're how we hold autonomous systems accountable, iterate toward real reliability, and build trust that scales.
+                </p>
+                <p>
+                    If you've spent your career learning to question, test, and refine -- in design studios, research labs, architecture firms, or product teams -- you're better prepared for this moment than you might realize. The medium changed. The discipline didn't.
+                </p>
+            </div>
+
+            <div class="article-footer">
+                <a href="../blog.html">&larr; Back to all posts</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-simple">
+                <p class="footer-made">Made by me in Atlanta</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nathaniel Steinrueck</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function checkPassword() {
+            var input = document.getElementById('passwordInput').value.toLowerCase().trim();
+            if (input === 'nathaniel') {
+                document.getElementById('passwordGate').style.display = 'none';
+                document.getElementById('articleContent').classList.remove('article-hidden');
+            } else {
+                document.getElementById('passwordError').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

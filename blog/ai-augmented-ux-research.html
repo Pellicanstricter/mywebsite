@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The real opportunity in AI-augmented research isn't the latest moderator tool. It's transforming findings into living knowledge systems discoverable when decisions are being made.">
+    <title>AI-Augmented UX Research: Turning Insights Into Organizational Knowledge - Nathaniel Steinrueck</title>
+    <meta property="og:title" content="AI-Augmented UX Research: Turning Insights Into Organizational Knowledge">
+    <meta property="og:description" content="The real opportunity in AI-augmented research isn't the latest moderator tool. It's transforming findings into living knowledge systems.">
+    <meta property="og:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
+    <link rel="canonical" href="https://www.nathanielsteinrueck.com/blog/ai-augmented-ux-research.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=1002">
+    <link rel="stylesheet" href="../css/case-study.css?v=2">
+    <link rel="stylesheet" href="../css/blog.css?v=1">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">Nate Steinrueck</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#work" class="nav-link">Work</a></li>
+                <li><a href="../blog.html" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../resume.html" class="nav-link">Resume</a></li>
+                <li><a href="../index.html#contact" class="nav-link cta-nav">Say Hello</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="article-hero">
+            <div class="container">
+                <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+                <span class="article-tag">AI + UX Research</span>
+                <h1 class="article-title">AI-Augmented UX Research: Turning Insights Into Organizational Knowledge</h1>
+            </div>
+        </section>
+
+        <div class="article-content">
+            <p>
+                Research teams have never been better at conducting studies. Between platforms like Dscout and UserTesting, mature methodologies, and growing organizational buy-in, the data coming out of most research programs is genuinely valuable. But there's a persistent gap between generating those insights and making them accessible when decisions are actually being made.
+            </p>
+            <p>
+                The real opportunity right now isn't adopting the latest AI moderator tool. It's transforming research findings from one-time deliverables into living knowledge systems -- insights that are discoverable at the exact moment a PM, designer, or stakeholder needs them.
+            </p>
+            <p>
+                I've been building toward this in my own work, first by setting up an AI-powered insights bot in Slack, then by prototyping a UX Research Copilot from scratch. What I've learned is that the technical barrier to building these tools is remarkably low -- and the impact on how teams use research is surprisingly high.
+            </p>
+
+            <h2>Why Traditional Research Distribution Falls Short</h2>
+            <p>
+                Most research gets delivered as a presentation, a report, or a Confluence page. These formats optimize for that first moment of delivery. They don't optimize for the PM who needs to check research during sprint planning three months later, or the designer exploring a new direction who vaguely remembers a relevant finding from last quarter.
+            </p>
+            <p>
+                As Nielsen Norman Group has noted, research creates the greatest value when findings are available precisely when stakeholders need them. The gap isn't in research quality -- it's in research accessibility over time.
+            </p>
+
+            <h2>What AI-Augmented Research Actually Looks Like</h2>
+            <p>
+                The most effective approach I've found starts with existing infrastructure rather than new procurement. If your organization already has tools like Dovetail, Cassidy AI, or even ChatGPT Projects, you likely have enough to start.
+            </p>
+            <p>
+                The core idea is simple: centralize your research data -- coded transcripts, survey results, personas, journey maps, thematic syntheses -- and make it queryable through AI. The AI handles retrieval and initial synthesis. The researcher validates and adds strategic context. The result is research that's continuously accessible rather than buried in a slide deck from six months ago.
+            </p>
+            <p>
+                What makes this work in practice is three things: consistent tagging taxonomies so insights are discoverable across projects, metadata that preserves methodological context (sample sizes, dates, methods), and evidence linking that traces AI outputs back to original transcripts and data -- maintaining the rigor that makes research trustworthy.
+            </p>
+
+            <h2>How This Played Out: The Insights Bot</h2>
+            <p>
+                To protect confidentiality I've generalized some details here, but the process and findings are accurate.
+            </p>
+            <p>
+                We connected an AI assistant to our research repository and deployed it in Slack. A stakeholder asked a deceptively simple question: what do we know about how users perceive our homepage?
+            </p>
+            <p>
+                Instead of waiting days for someone to compile findings, the bot returned evidence-based insights within minutes -- covering trust dynamics, usability patterns, support preferences, and navigation pain points, all drawn from existing research data.
+            </p>
+            <p>
+                The researcher validated the output, confirmed accuracy, and layered in strategic context about initiatives already in progress. That validation step -- essential for maintaining research integrity -- took minutes rather than hours.
+            </p>
+            <p>
+                Here's what surprised me, though. I expected the highest engagement to come from leadership asking big strategic questions. Instead, it was PMs during sprint planning: "Do we have research on this?" Over and over. The value wasn't in the sophistication of the AI. It was in making research findable at the exact moment someone needed it.
+            </p>
+
+            <h2>Building a UX Research Copilot</h2>
+            <p>
+                I wanted to test whether researchers could build their own custom tools rather than waiting for vendors to build the perfect platform. So I built a UX Research Copilot -- a functional prototype that ingests interview transcripts and produces structured insight reports with summaries, themes, and key quotes.
+            </p>
+            <p>
+                The technical architecture is a four-stage pipeline: a document ingestor that handles multiple file formats with intelligent chunking, an insight analyzer that extracts quotes and themes, a theme synthesizer that groups and summarizes findings, and an output formatter that creates structured deliverables. LangChain orchestrates the prompts and document processing.
+            </p>
+            <p>
+                The point wasn't to build a production product. It was to prove that researchers can create specialized tools tailored to how they actually work -- rather than adapting their workflow to fit a generic chat interface.
+            </p>
+
+            <h2>Choosing the Right Approach</h2>
+            <p>
+                Several paths can support AI-augmented research distribution, depending on your team's maturity and needs.
+            </p>
+            <p>
+                <strong>Cassidy AI</strong> excels at self-service stakeholder access -- it searches across repositories and returns evidence-based summaries directly in Slack. <strong>Marvin</strong> specializes in insight creation with automated tagging and video highlight generation. <strong>Dovetail</strong> provides robust organization and search with growing integration capabilities. And custom tools built on platforms like <strong>ChatGPT Projects</strong> let you tailor outputs to your specific workflow.
+            </p>
+            <p>
+                In my experience, the most effective solutions combine an established platform for the research repository with lightweight custom tools for specific use cases. Start with whatever you already have access to.
+            </p>
+
+            <h2>Where to Start</h2>
+            <p>
+                Pick one recurring question your team asks -- maybe it's about onboarding friction, or how different segments use a specific feature -- and build a lightweight system that can answer it on the spot. The first win almost always comes from somewhere you don't expect.
+            </p>
+            <p>
+                The form factor matters, too. Slack worked for our team because that's where conversations already happened. But chatbots aren't the only answer. The more interesting frontier is building specialized tools that let stakeholders engage with research in new ways -- custom dashboards, bespoke insight generators, or decision-support interfaces designed for specific workflows.
+            </p>
+            <p>
+                The technical barrier has never been lower for researchers to build these systems themselves. I'll be honest -- I've had plenty of failed experiments along the way. Tools that nobody used, integrations that broke, outputs that stakeholders found more confusing than helpful. But those attempts were what eventually revealed what actually works. And the key insight, after all of it, isn't really about AI capability at all. It's about making research available at the speed of decisions.
+            </p>
+        </div>
+
+        <div class="article-footer">
+            <a href="../blog.html">&larr; Back to all posts</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content-simple">
+                <p class="footer-made">Made by me in Atlanta</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nathaniel Steinrueck</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
