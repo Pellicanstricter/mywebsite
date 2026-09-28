@@ -133,35 +133,42 @@
                     This setup helps with AI research tools, where every synthesized insight should trace back to the source transcripts. It helps with external tools too, where a wrong answer can reach a customer before anyone on the team sees it. In both cases, the step records show where to make the change and the evals show whether the change worked.
                 </p>
 
-                <h2>A Framework I Keep Coming Back To</h2>
+                <h2>A Framework for Evaluation-Driven Development</h2>
                 <p>
-                    This is the evaluation approach I've been developing while building AI tools, and honestly, it's just the design critique process translated into a new context:
-                </p>
-                <p>
-                    <strong>Lead with failure modes.</strong> Before building anything, identify the three worst outcomes your agent could produce. Write evals for those first. Everything else is secondary until you've guarded against the catastrophic stuff.
-                </p>
-                <p>
-                    <strong>Layer your eval types.</strong> Code-based checks handle anything with a verifiable answer. LLM-as-judge covers open-ended quality. Human evaluation handles the highest-stakes calls and calibrates the automated layers beneath it.
-                </p>
-                <p>
-                    <strong>Eval the chain, not just the output.</strong> In multi-step workflows, a polished final deliverable can conceal a broken intermediate step. Test the plan, the tool calls, the reasoning, not just what the user sees.
-                </p>
-                <p>
-                    <strong>Grow your eval suite from production failures.</strong> Every real-world failure becomes a new test case. Over time, your evaluation library becomes an institutional memory of everything that's gone wrong, and a guarantee it won't happen the same way again.
-                </p>
-                <p>
-                    <strong>Make it collaborative.</strong> The best design critiques work because different perspectives catch different blind spots. Same principle: domain experts, end users, and engineers should all have a hand in defining what "good" means.
+                    This is the evaluation process I use when building AI tools. It works for a single-prompt feature and for a multi-agent system, and each step builds on the one before it.
                 </p>
 
-                <h2>Where This Is Heading</h2>
+                <h3>1. Start with failure modes</h3>
                 <p>
-                    We're watching AI systems cross from answering questions to completing entire tasks autonomously. Agents now search, compare, reason, and execute on behalf of users. Trust is the bottleneck, and the teams that earn it won't be the ones with the most powerful models. They'll be the ones with the most disciplined evaluation practices.
+                    Before you build, list the three worst outputs your system could produce, such as a wrong number in a report, an answer that cites a source it never read, or an action taken without approval. Write evals for those three first, because they are the failures that cost users the most.
+                </p>
+
+                <h3>2. Layer your eval types</h3>
+                <p>
+                    Use code-based checks for anything with a verifiable answer, such as a required field, a date format, or a total that has to match. Use LLM-as-judge scoring for open-ended qualities like tone, completeness, and relevance. Use human review for the highest-stakes cases, and use those human decisions to calibrate the automated layers.
+                </p>
+
+                <h3>3. Evaluate each step, not only the final output</h3>
+                <p>
+                    In a multi-step workflow, a well-written final answer can hide a wrong plan or a failed tool call earlier in the chain. Evaluate the plan, each tool call, and the intermediate results along with what the user sees. The step records from your observability setup make this possible.
+                </p>
+
+                <h3>4. Turn production failures into test cases</h3>
+                <p>
+                    When the system fails in real use, add that case to your eval suite. Over time, the suite becomes a record of every failure you have seen, and rerunning it before each change shows whether an old problem has come back.
+                </p>
+
+                <h3>5. Define "good" with the people who use the output</h3>
+                <p>
+                    Engineers can tell whether a tool call worked, domain experts know whether an answer is correct, and end users know whether it helps them do their work. Bring all three into writing the eval criteria and reviewing results, so the evals measure what the people relying on the system care about.
+                </p>
+
+                <h2>Getting Started</h2>
+                <p>
+                    AI systems are moving from answering questions to completing tasks, and agents now search, compare, and take actions on behalf of users. As they take on more of that work, evals and observability let you check that each step was done correctly and find what to fix when it wasn't.
                 </p>
                 <p>
-                    Ng is right that evals are the differentiator. I'd go further: evals are the design critique of the AI era. They're how we hold autonomous systems accountable, iterate toward real reliability, and build trust that scales.
-                </p>
-                <p>
-                    If you've spent your career learning to question, test, and refine in design studios, research labs, architecture firms, or product teams, you're better prepared for this moment than you might realize. The medium changed. The discipline didn't.
+                    A first version can be small. Pick one workflow, write evals for its three worst failure modes, log each step the system takes, and have a person review a sample of outputs each week. Each failure you find becomes the next test case.
                 </p>
             </div>
 
