@@ -164,7 +164,7 @@ This article covers building an AI-powered insights bot in Slack, prototyping a 
 
 URL: https://www.nathanielsteinrueck.com/blog/ai-augmented-ux-research.html
 
-### Evals Are the New Design Critique: Building Resilient AI Systems Through Evaluation-Driven Development
+### Building Resilient AI Systems Through Evaluation-Driven Development
 
 Most teams building with AI are guessing. They ship an agent, cross their fingers, and wait for user complaints to tell them what broke. This article connects Andrew Ng's four agentic AI patterns (reflection, tool use, planning, multi-agent collaboration) to the practice of design critique and structured evaluation.
 

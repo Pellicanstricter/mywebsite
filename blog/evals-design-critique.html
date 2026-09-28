@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Building resilient AI systems through evaluation-driven development. How the discipline of design critique translates directly to AI evals.">
-    <title>Evals Are the New Design Critique - Nathaniel Steinrueck</title>
+    <title>Building Resilient AI Systems Through Evaluation-Driven Development - Nathaniel Steinrueck</title>
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.nathanielsteinrueck.com/blog/evals-design-critique.html">
-    <meta property="og:title" content="Evals Are the New Design Critique: Building Resilient AI Systems Through Evaluation-Driven Development">
+    <meta property="og:title" content="Building Resilient AI Systems Through Evaluation-Driven Development">
     <meta property="og:description" content="Building resilient AI systems through evaluation-driven development. How the discipline of design critique translates directly to AI evals.">
     <meta property="og:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
     <meta property="og:site_name" content="Nate Steinrueck">
     <meta property="article:author" content="Nathaniel Steinrueck">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Evals Are the New Design Critique">
+    <meta property="twitter:title" content="Building Resilient AI Systems Through Evaluation-Driven Development">
     <meta property="twitter:description" content="Building resilient AI systems through evaluation-driven development.">
     <meta property="twitter:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
     <link rel="canonical" href="https://www.nathanielsteinrueck.com/blog/evals-design-critique.html">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Evals Are the New Design Critique: Building Resilient AI Systems Through Evaluation-Driven Development",
+        "@type": "BlogPosting",
+        "headline": "Building Resilient AI Systems Through Evaluation-Driven Development",
         "description": "How the discipline of design critique translates directly to AI evaluation, and why it's the single biggest differentiator for teams shipping agents.",
+        "datePublished": "2026-03-26",
+        "dateModified": "2026-03-26",
         "author": {
             "@type": "Person",
             "name": "Nathaniel Steinrueck",
@@ -44,69 +46,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css?v=1002">
     <link rel="stylesheet" href="../css/case-study.css?v=2">
-    <link rel="stylesheet" href="../css/blog.css?v=1">
-    <style>
-        .password-gate {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        .password-gate h2 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.75rem;
-        }
-        .password-gate p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        .password-input-group {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-        .password-input-group input {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            padding: 0.6rem 1rem;
-            border: 1px solid var(--border-medium);
-            border-radius: 6px;
-            outline: none;
-            width: 200px;
-        }
-        .password-input-group input:focus {
-            border-color: var(--text-primary);
-        }
-        .password-input-group button {
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            font-weight: 600;
-            padding: 0.6rem 1.25rem;
-            background: var(--text-primary);
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-        }
-        .password-input-group button:hover {
-            opacity: 0.8;
-        }
-        .password-error {
-            color: #dc2626;
-            font-size: 0.85rem;
-            margin-top: 0.75rem;
-            display: none;
-        }
-        .article-hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/blog.css?v=2">
 </head>
 <body>
     <header class="header">
@@ -135,23 +75,11 @@
             <div class="container">
                 <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
                 <span class="article-tag">AI + Strategy</span>
-                <h1 class="article-title">Evals Are the New Design Critique: Building Resilient AI Systems Through Evaluation-Driven Development</h1>
+                <h1 class="article-title">Building Resilient AI Systems Through Evaluation-Driven Development</h1>
             </div>
         </section>
 
-        <!-- Password Gate -->
-        <div id="passwordGate" class="password-gate">
-            <h2>This article is password-protected</h2>
-            <p>Reach out to request access.</p>
-            <div class="password-input-group">
-                <input type="password" id="passwordInput" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkPassword()">
-                <button onclick="checkPassword()">Unlock</button>
-            </div>
-            <p class="password-error" id="passwordError">Incorrect password. Try again.</p>
-        </div>
-
-        <!-- Article Content (hidden until unlocked) -->
-        <div id="articleContent" class="article-hidden">
+        <div id="articleContent">
             <div class="article-content">
                 <p>
                     Most teams building with AI are guessing. They ship an agent, cross their fingers, and wait for user complaints to tell them what broke. It's the equivalent of launching a product without ever talking to a user -- and somehow, in 2026, it's still the default.
@@ -237,6 +165,18 @@
                 </p>
             </div>
 
+            <div class="article-related">
+                <h3>Related</h3>
+                <a href="ai-augmented-ux-research.html" class="related-post-link">
+                    <span class="related-post-title">AI-Augmented UX Research</span>
+                    <span class="related-post-desc">Turning research findings into living organizational knowledge systems</span>
+                </a>
+                <a href="../google-planning-tool.html" class="related-post-link">
+                    <span class="related-post-title">Google Planning Tool</span>
+                    <span class="related-post-desc">Research for AI-powered space planning at Google</span>
+                </a>
+            </div>
+
             <div class="article-footer">
                 <a href="../blog.html">&larr; Back to all posts</a>
             </div>
@@ -255,16 +195,5 @@
     </footer>
 
     <script src="../js/main.js"></script>
-    <script>
-        function checkPassword() {
-            var input = document.getElementById('passwordInput').value.toLowerCase().trim();
-            if (input === 'nathaniel') {
-                document.getElementById('passwordGate').style.display = 'none';
-                document.getElementById('articleContent').classList.remove('article-hidden');
-            } else {
-                document.getElementById('passwordError').style.display = 'block';
-            }
-        }
-    </script>
 </body>
 </html>
