@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Building resilient AI systems through evaluation-driven development. How the discipline of design critique translates directly to AI evals.">
-    <title>Building Resilient AI Systems Through Evaluation-Driven Development - Nathaniel Steinrueck</title>
+    <title>Building Resilient AI Systems Through Evaluation-Driven Development | Nathaniel Steinrueck</title>
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.nathanielsteinrueck.com/blog/evals-design-critique.html">
     <meta property="og:title" content="Building Resilient AI Systems Through Evaluation-Driven Development">
@@ -82,16 +82,16 @@
         <div id="articleContent">
             <div class="article-content">
                 <p>
-                    Most teams building with AI are guessing. They ship an agent, cross their fingers, and wait for user complaints to tell them what broke. It's the equivalent of launching a product without ever talking to a user -- and somehow, in 2026, it's still the default.
+                    Teams building with AI often don't have a reliable way to tell whether their agent is working. The tools are new, timelines are short, and there are few established practices for testing agent behavior, so teams often ship, watch how the agent performs with real users, and learn what broke from feedback after launch. In product terms, that is close to launching without user research: problems surface after release, when they cost the most to fix.
                 </p>
                 <p>
-                    I've spent the past decade moving between architecture, UX research, and product strategy -- working on everything from Google's workplace tools to healthcare enrollment systems to AI-powered design workflows. The pattern I keep running into is teams that pour energy into model selection and prompt engineering while almost entirely neglecting the thing that actually determines whether their system holds up under pressure: structured evaluation.
+                    I've spent the past decade moving between architecture, UX research, and product strategy, working on everything from Google's workplace tools to healthcare enrollment systems to AI-powered design workflows. The pattern I keep running into is teams that pour energy into model selection and prompt engineering while almost entirely neglecting the thing that actually determines whether their system holds up under pressure: structured evaluation.
                 </p>
                 <p>
-                    In the agentic AI space, we call these evals. Andrew Ng calls them the single biggest differentiator between teams that ship reliable agents and those that don't. In his Agentic AI course, he put it bluntly -- the biggest predictor of execution quality isn't prompt engineering wizardry or model choice. It's the ability to drive a disciplined process for evals and error analysis.
+                    In the agentic AI space, we call these evals. Andrew Ng calls them the single biggest differentiator between teams that ship reliable agents and those that don't. In his Agentic AI course, he put it bluntly: the biggest predictor of execution quality isn't prompt engineering wizardry or model choice. It's the ability to drive a disciplined process for evals and error analysis.
                 </p>
                 <p>
-                    That clicked for me immediately. Back in architecture school, I spent more hours in critique than at my drafting desk. The pin-up, the desk crit, the jury review -- those weren't afterthoughts. They were the mechanism that turned ambitious sketches into buildings that could actually stand. The parallel to AI evals is almost uncanny.
+                    That clicked for me immediately. Back in architecture school, I spent more hours in critique than at my drafting desk. The pin-up, the desk crit, the jury review: those weren't afterthoughts. They were the mechanism that turned ambitious sketches into buildings that could actually stand. The parallel to AI evals is almost uncanny.
                 </p>
 
                 <h2>What Evals Are and Why They Matter</h2>
@@ -102,24 +102,24 @@
                     If you've ever facilitated a heuristic evaluation on a UI or run a structured design critique, this logic is already in your bones. You define what "good" looks like, then you measure the work against that standard. Evals are the same discipline, applied to a different medium.
                 </p>
                 <p>
-                    The mistake most teams make is treating evaluation as a launch gate -- a one-time checkpoint. That's like running a single usability test and calling the product done. Systems that hold up under real conditions need continuous evaluation, the same way products that serve real users need ongoing research.
+                    The mistake most teams make is treating evaluation as a launch gate, a one-time checkpoint. That's like running a single usability test and calling the product done. Systems that hold up under real conditions need continuous evaluation, the same way products that serve real users need ongoing research.
                 </p>
 
                 <h2>Ng's Four Agentic Patterns (And Where They Break)</h2>
                 <p>
-                    Andrew Ng's framework identifies four design patterns for agentic AI. Each one creates specific failure modes -- which is exactly why each one needs its own evaluation strategy.
+                    Andrew Ng's framework identifies four design patterns for agentic AI. Each one creates specific failure modes, which is exactly why each one needs its own evaluation strategy.
                 </p>
                 <p>
-                    <strong>Reflection</strong> is built-in self-critique: an agent reviews its own output and refines it before responding. Research from DeepLearning.AI demonstrates that GPT-3.5 with agentic techniques like reflection can score in the high 70s to 90s on coding benchmarks -- matching or exceeding GPT-4's zero-shot performance. The system architecture outweighs the raw model. But reflection without evals is just an agent agreeing with itself.
+                    <strong>Reflection</strong> is built-in self-critique: an agent reviews its own output and refines it before responding. Research from DeepLearning.AI demonstrates that GPT-3.5 with agentic techniques like reflection can score in the high 70s to 90s on coding benchmarks, matching or exceeding GPT-4's zero-shot performance. The system architecture outweighs the raw model. But reflection without evals is just an agent agreeing with itself.
                 </p>
                 <p>
-                    <strong>Tool use</strong> lets agents call APIs, execute code, search databases, and verify information against external sources. Every tool call is a potential failure point -- a timeout, a malformed query, a hallucinated function name. These need targeted evals.
+                    <strong>Tool use</strong> lets agents call APIs, execute code, search databases, and verify information against external sources. Every tool call is a potential failure point: a timeout, a malformed query, a hallucinated function name. These need targeted evals.
                 </p>
                 <p>
-                    <strong>Planning</strong> is task decomposition at the system level: an LLM breaking a complex request into subtasks before executing. It's the same muscle a product strategist uses when scoping a workstream -- and I lean on it constantly. But without evaluation on the planning step itself, an agent can flawlessly execute a plan that was wrong from the start.
+                    <strong>Planning</strong> is task decomposition at the system level: an LLM breaking a complex request into subtasks before executing. It's the same muscle a product strategist uses when scoping a workstream, and I lean on it constantly. But without evaluation on the planning step itself, an agent can flawlessly execute a plan that was wrong from the start.
                 </p>
                 <p>
-                    <strong>Multi-agent collaboration</strong> distributes work across specialized agents -- one researches, one drafts, one reviews. The parallel to cross-functional teams is obvious, and so is the governance challenge. Every handoff between agents is a seam where quality can slip.
+                    <strong>Multi-agent collaboration</strong> distributes work across specialized agents: one researches, one drafts, one reviews. The parallel to cross-functional teams is obvious, and so is the governance challenge. Every handoff between agents is a seam where quality can slip.
                 </p>
 
                 <h2>Why This Should Feel Familiar to Designers</h2>
@@ -127,7 +127,7 @@
                     Here's what keeps striking me: the people I see building the most resilient AI systems don't always have the deepest engineering backgrounds. They think like researchers. They instinctively distrust outputs, build feedback loops, and treat every interaction as a data point worth examining.
                 </p>
                 <p>
-                    Design thinking follows the same rhythm -- define, prototype, test, refine, repeat. Evaluation-driven development is that cycle applied to agent behavior. Instead of testing wireframes with users, you're testing agent decisions against defined criteria. Instead of a critique where colleagues challenge your rationale, you're building automated systems that challenge your agent's rationale.
+                    Design thinking follows the same rhythm: define, prototype, test, refine, repeat. Evaluation-driven development is that cycle applied to agent behavior. Instead of testing wireframes with users, you're testing agent decisions against defined criteria. Instead of a critique where colleagues challenge your rationale, you're building automated systems that challenge your agent's rationale.
                 </p>
                 <p>
                     The discipline transfers directly. If structured critique and iterative refinement are already how you work, you have a real advantage here.
@@ -135,22 +135,22 @@
 
                 <h2>A Framework I Keep Coming Back To</h2>
                 <p>
-                    This is the evaluation approach I've been developing while building AI tools -- and honestly, it's just the design critique process translated into a new context:
+                    This is the evaluation approach I've been developing while building AI tools, and honestly, it's just the design critique process translated into a new context:
                 </p>
                 <p>
                     <strong>Lead with failure modes.</strong> Before building anything, identify the three worst outcomes your agent could produce. Write evals for those first. Everything else is secondary until you've guarded against the catastrophic stuff.
                 </p>
                 <p>
-                    <strong>Layer your eval types.</strong> Code-based checks handle anything with a verifiable answer. LLM-as-judge covers open-ended quality. Human evaluation handles the highest-stakes calls -- and calibrates the automated layers beneath it.
+                    <strong>Layer your eval types.</strong> Code-based checks handle anything with a verifiable answer. LLM-as-judge covers open-ended quality. Human evaluation handles the highest-stakes calls and calibrates the automated layers beneath it.
                 </p>
                 <p>
-                    <strong>Eval the chain, not just the output.</strong> In multi-step workflows, a polished final deliverable can conceal a broken intermediate step. Test the plan, the tool calls, the reasoning -- not just what the user sees.
+                    <strong>Eval the chain, not just the output.</strong> In multi-step workflows, a polished final deliverable can conceal a broken intermediate step. Test the plan, the tool calls, the reasoning, not just what the user sees.
                 </p>
                 <p>
-                    <strong>Grow your eval suite from production failures.</strong> Every real-world failure becomes a new test case. Over time, your evaluation library becomes an institutional memory of everything that's gone wrong -- and a guarantee it won't happen the same way again.
+                    <strong>Grow your eval suite from production failures.</strong> Every real-world failure becomes a new test case. Over time, your evaluation library becomes an institutional memory of everything that's gone wrong, and a guarantee it won't happen the same way again.
                 </p>
                 <p>
-                    <strong>Make it collaborative.</strong> The best design critiques work because different perspectives catch different blind spots. Same principle -- domain experts, end users, and engineers should all have a hand in defining what "good" means.
+                    <strong>Make it collaborative.</strong> The best design critiques work because different perspectives catch different blind spots. Same principle: domain experts, end users, and engineers should all have a hand in defining what "good" means.
                 </p>
 
                 <h2>Where This Is Heading</h2>
@@ -158,10 +158,10 @@
                     We're watching AI systems cross from answering questions to completing entire tasks autonomously. Agents now search, compare, reason, and execute on behalf of users. Trust is the bottleneck, and the teams that earn it won't be the ones with the most powerful models. They'll be the ones with the most disciplined evaluation practices.
                 </p>
                 <p>
-                    Ng is right that evals are the differentiator. I'd go further -- evals are the design critique of the AI era. They're how we hold autonomous systems accountable, iterate toward real reliability, and build trust that scales.
+                    Ng is right that evals are the differentiator. I'd go further: evals are the design critique of the AI era. They're how we hold autonomous systems accountable, iterate toward real reliability, and build trust that scales.
                 </p>
                 <p>
-                    If you've spent your career learning to question, test, and refine -- in design studios, research labs, architecture firms, or product teams -- you're better prepared for this moment than you might realize. The medium changed. The discipline didn't.
+                    If you've spent your career learning to question, test, and refine in design studios, research labs, architecture firms, or product teams, you're better prepared for this moment than you might realize. The medium changed. The discipline didn't.
                 </p>
             </div>
 

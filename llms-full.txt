@@ -170,7 +170,7 @@ URL: https://www.nathanielsteinrueck.com/blog/ai-augmented-ux-research.html
 
 ### Building Resilient AI Systems Through Evaluation-Driven Development
 
-Most teams building with AI are guessing. They ship an agent, cross their fingers, and wait for user complaints to tell them what broke. This article connects Andrew Ng's four agentic AI patterns (reflection, tool use, planning, multi-agent collaboration) to the practice of design critique and structured evaluation.
+Teams building with AI often don't have a reliable way to tell whether their agent is working, so problems surface after launch. This article connects Andrew Ng's four agentic AI patterns (reflection, tool use, planning, multi-agent collaboration) to the practice of design critique and structured evaluation.
 
 Key framework: lead with failure modes, layer eval types (code-based, LLM-as-judge, human), eval the chain not just the output, grow your eval suite from production failures, and make it collaborative. The discipline of design critique transfers directly to building resilient AI systems.
 
