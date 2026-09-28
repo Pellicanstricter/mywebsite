@@ -88,7 +88,7 @@
                     I've spent the past decade moving between architecture, UX research, and product strategy, working on everything from Google's workplace tools to healthcare enrollment systems to AI-powered design workflows. The pattern I keep running into is teams that pour energy into model selection and prompt engineering while almost entirely neglecting the thing that actually determines whether their system holds up under pressure: structured evaluation.
                 </p>
                 <p>
-                    In the agentic AI space, we call these evals. Andrew Ng calls them the single biggest differentiator between teams that ship reliable agents and those that don't. In his Agentic AI course, he put it bluntly: the biggest predictor of execution quality isn't prompt engineering wizardry or model choice. It's the ability to drive a disciplined process for evals and error analysis.
+                    Andrew Ng's Agentic AI course offers a helpful way to think about this. He describes evals, which are structured tests of what an AI system produces, as the practice that most separates teams that ship reliable agents. In his view, a disciplined process for evals and error analysis predicts execution quality better than prompt engineering or model choice does.
                 </p>
                 <p>
                     That clicked for me immediately. Back in architecture school, I spent more hours in critique than at my drafting desk. The pin-up, the desk crit, the jury review: those weren't afterthoughts. They were the mechanism that turned ambitious sketches into buildings that could actually stand. The parallel to AI evals is almost uncanny.
@@ -122,15 +122,15 @@
                     <strong>Multi-agent collaboration</strong> distributes work across specialized agents: one researches, one drafts, one reviews. The parallel to cross-functional teams is obvious, and so is the governance challenge. Every handoff between agents is a seam where quality can slip.
                 </p>
 
-                <h2>Why This Should Feel Familiar to Designers</h2>
+                <h2>Observability and Human Review</h2>
                 <p>
-                    Here's what keeps striking me: the people I see building the most resilient AI systems don't always have the deepest engineering backgrounds. They think like researchers. They instinctively distrust outputs, build feedback loops, and treat every interaction as a data point worth examining.
+                    Evals work best alongside observability, which means recording what the system does at each step: the input it received, the plan it made, the tools it called, and what came back. With those records, you can find the step where a failure started and fix that step instead of guessing from the final output. This works for any AI system, whether it is an internal research tool, a customer-facing assistant, or a multi-step agent.
                 </p>
                 <p>
-                    Design thinking follows the same rhythm: define, prototype, test, refine, repeat. Evaluation-driven development is that cycle applied to agent behavior. Instead of testing wireframes with users, you're testing agent decisions against defined criteria. Instead of a critique where colleagues challenge your rationale, you're building automated systems that challenge your agent's rationale.
+                    In an agentic system, I put two kinds of evaluation in the loop. Automated evals, including code checks and LLM-as-judge scoring, run on every output and flag problems at a volume no person could review. Human evals cover the cases where judgment matters most, and those human decisions become the reference the automated evals are calibrated against. Each failure a person catches becomes a new test case, so the automated layer improves over time.
                 </p>
                 <p>
-                    The discipline transfers directly. If structured critique and iterative refinement are already how you work, you have a real advantage here.
+                    This setup helps with AI research tools, where every synthesized insight should trace back to the source transcripts. It helps with external tools too, where a wrong answer can reach a customer before anyone on the team sees it. In both cases, the step records show where to make the change and the evals show whether the change worked.
                 </p>
 
                 <h2>A Framework I Keep Coming Back To</h2>
