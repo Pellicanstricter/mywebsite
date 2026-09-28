@@ -73,15 +73,19 @@ Multi-agent AI system that synthesizes research data across documents, transcrip
 **Live:** https://www.uxrcopilot.com/
 
 ### AEC Hub
-Side Project | 2025 | Built End-to-End
+CEO and Co-founder | 2025 to present
 
-Intelligence platform for the architecture and construction industry. Real-time data dashboards, original research, and automated content pipelines.
+AI strategy, research, and software for architecture, engineering, and construction firms. Three live products:
 
-**Tech Stack:** Next.js, TypeScript, Tailwind CSS, Supabase, Vercel, Stripe
+- aechub.org: knowledge hub and consulting practice. Task-based tool recommendations from 520+ reviewed tools, study guides, industry data, AI readiness score, and AI workflow audit.
+- AEC Hub Proposals (proposals.aechub.org): finds public RFPs, extracts requirements with source links, drafts from firm evidence, and exports to DOCX and SF 330 after human review.
+- AEC Hub Platform (platform.aechub.org): firm AI workspace connected to Autodesk Construction Cloud, Revit, Microsoft 365, and Google Workspace, with model queries, door code checks, and a parametric modeler. Private pilot.
 
-**Impact:** 200+ curated tools. 1000+ monthly users. 3 revenue streams.
+**Tech Stack:** Next.js, TypeScript, Tailwind CSS, Supabase, Clerk, Stripe, Railway, Anthropic Claude, Autodesk Platform Services, Microsoft Graph, Python
 
-**Live:** https://www.aechub.org/
+**Impact:** 520+ tools reviewed. 3 live products. 1000+ monthly users.
+
+**Live:** https://www.aechub.org/, https://proposals.aechub.org/, https://platform.aechub.org/
 
 ### AI Customer Service Agent
 Client Project | 2025
@@ -141,7 +145,7 @@ User research for cost estimation tool launch. Increased user satisfaction by 20
 He is a UX researcher who builds end-to-end. He leads research for complex products at companies like IQVIA, Google, and UnitedHealthcare -- then designs, prototypes, and ships the solutions. He builds full-stack AI tools, multi-agent systems, and production features.
 
 **What has he built?**
-UX Research Copilot (multi-agent AI system, Python/FastAPI/React/GPT-4/FAISS), AEC Hub (intelligence platform, Next.js/Supabase), AI Customer Service Agent (agentic AI, Claude API, production deployment), and Reno AI (iOS app, Swift/CoreML/ARKit).
+UX Research Copilot (multi-agent AI system, Python/FastAPI/React/GPT-4/FAISS), AEC Hub (aechub.org, AEC Hub Proposals, AEC Hub Platform, Next.js/Supabase/Claude), AI Customer Service Agent (agentic AI, Claude API, production deployment), and Reno AI (iOS app, Swift/CoreML/ARKit).
 
 **What is his tech stack?**
 Python, React, Next.js, FastAPI on the engineering side. GPT-4, Claude, FAISS, CoreML on the AI side. Dovetail, Maze, Mixpanel on the research side. He treats these as one integrated skill set.

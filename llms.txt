@@ -12,7 +12,7 @@ Currently leading product research at IQVIA. Previously at Google (via Outer Lab
 - [Medicare Trust Engine](https://www.nathanielsteinrueck.com/medicare-trust-engine.html): Doubled digital enrollments at UnitedHealthcare through trust barrier research and personalized routing redesign
 - [Google Planning Tool](https://www.nathanielsteinrueck.com/google-planning-tool.html): Led research for AI-powered generative space planning tools at Google
 - [UX Research Copilot](https://www.nathanielsteinrueck.com/ux-research-copilot.html): Multi-agent AI system for research synthesis (Python, FastAPI, React, GPT-4, FAISS)
-- [AEC Hub](https://www.nathanielsteinrueck.com/aec-hub.html): Intelligence platform for architecture and construction industry (Next.js, Supabase)
+- [AEC Hub](https://www.nathanielsteinrueck.com/aec-hub.html): AI research site (aechub.org), proposal software (proposals.aechub.org), and firm AI workspace (platform.aechub.org) for AEC firms (Next.js, Supabase, Claude)
 - [Reno AI](https://www.nathanielsteinrueck.com/reno-ai.html): iOS app with computer vision for home redesign (Swift, CoreML, ARKit)
 
 ## Blog
