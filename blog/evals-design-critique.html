@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Building resilient AI systems through evaluation-driven development. How the discipline of design critique translates directly to AI evals.">
-    <title>Building Resilient AI Systems Through Evaluation-Driven Development | Nathaniel Steinrueck</title>
+    <meta name="description" content="Understanding Andrew Ng's agentic AI framework and applying it to internal tools, customer-facing products, and continuous improvement.">
+    <title>Building Better AI Systems Through Evaluation-Driven Development | Nathaniel Steinrueck</title>
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.nathanielsteinrueck.com/blog/evals-design-critique.html">
-    <meta property="og:title" content="Building Resilient AI Systems Through Evaluation-Driven Development">
-    <meta property="og:description" content="Building resilient AI systems through evaluation-driven development. How the discipline of design critique translates directly to AI evals.">
+    <meta property="og:title" content="Building Better AI Systems Through Evaluation-Driven Development">
+    <meta property="og:description" content="Understanding Andrew Ng's agentic AI framework and applying it to internal tools, customer-facing products, and continuous improvement.">
     <meta property="og:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
     <meta property="og:site_name" content="Nate Steinrueck">
     <meta property="article:author" content="Nathaniel Steinrueck">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Building Resilient AI Systems Through Evaluation-Driven Development">
-    <meta property="twitter:description" content="Building resilient AI systems through evaluation-driven development.">
+    <meta property="twitter:title" content="Building Better AI Systems Through Evaluation-Driven Development">
+    <meta property="twitter:description" content="Understanding Andrew Ng's agentic AI framework and applying it to internal tools, customer-facing products, and continuous improvement.">
     <meta property="twitter:image" content="https://www.nathanielsteinrueck.com/images/og-preview.png">
     <link rel="canonical" href="https://www.nathanielsteinrueck.com/blog/evals-design-critique.html">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": "Building Resilient AI Systems Through Evaluation-Driven Development",
-        "description": "How the discipline of design critique translates directly to AI evaluation, and why it's the single biggest differentiator for teams shipping agents.",
+        "headline": "Building Better AI Systems Through Evaluation-Driven Development",
+        "description": "Understanding Andrew Ng's agentic AI framework and applying it to internal tools, customer-facing products, and continuous improvement.",
         "datePublished": "2026-03-26",
-        "dateModified": "2026-03-26",
+        "dateModified": "2026-09-29",
         "author": {
             "@type": "Person",
             "name": "Nathaniel Steinrueck",
@@ -36,7 +36,7 @@
         },
         "url": "https://www.nathanielsteinrueck.com/blog/evals-design-critique.html",
         "mainEntityOfPage": "https://www.nathanielsteinrueck.com/blog/evals-design-critique.html",
-        "keywords": ["AI Evals", "Agentic AI", "Design Critique", "Evaluation-Driven Development", "Andrew Ng", "Product Strategy"]
+        "keywords": ["AI Evals", "Agentic AI", "Observability", "Evaluation-Driven Development", "Andrew Ng", "Product Strategy"]
     }
     </script>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -75,100 +75,206 @@
             <div class="container">
                 <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
                 <span class="article-tag">AI + Strategy</span>
-                <h1 class="article-title">Building Resilient AI Systems Through Evaluation-Driven Development</h1>
+                <h1 class="article-title">Building Better AI Systems Through Evaluation-Driven Development</h1>
+                <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.6; margin-top: 1rem; max-width: 720px;"><em>Understanding Andrew Ng's agentic AI framework and applying it to internal tools, customer-facing products, and continuous improvement.</em></p>
             </div>
         </section>
 
         <div id="articleContent">
             <div class="article-content">
                 <p>
-                    Teams building with AI often don't have a reliable way to tell whether their agent is working. The tools are new, timelines are short, and there are few established practices for testing agent behavior, so teams often ship, watch how the agent performs with real users, and learn what broke from feedback after launch. In product terms, that is close to launching without user research: problems surface after release, when they cost the most to fix.
+                    When an AI tool produces a disappointing result, it is tempting to conclude that the model is not capable enough. Sometimes that is the constraint. But before changing models or abandoning the idea, I think there is a more useful question to ask: have we built a system that gives the model what it needs to succeed, lets us see where it falls short, and provides a way to improve?
                 </p>
                 <p>
-                    I've spent the past decade moving between architecture, UX research, and product strategy, working on everything from Google's workplace tools to healthcare enrollment systems to AI-powered design workflows. The pattern I keep running into is teams that pour energy into model selection and prompt engineering while almost entirely neglecting the thing that actually determines whether their system holds up under pressure: structured evaluation.
+                    Andrew Ng's work is an excellent reference point for answering that question. His <em>Agentic AI</em> course at DeepLearning.AI connects the design of AI workflows with evaluation, error analysis, and practical improvement. What I especially appreciate about his teaching is the combination of technical depth and clarity. He makes complex ideas understandable without losing the details that matter when building something real.
                 </p>
                 <p>
-                    Andrew Ng's Agentic AI course offers a helpful way to think about this. He describes evals, which are structured tests of what an AI system produces, as the practice that most separates teams that ship reliable agents. In his view, a disciplined process for evals and error analysis predicts execution quality better than prompt engineering or model choice does.
-                </p>
-                <p>
-                    That clicked for me immediately. Back in architecture school, I spent more hours in critique than at my drafting desk. The pin-up, the desk crit, the jury review: those weren't afterthoughts. They were the mechanism that turned ambitious sketches into buildings that could actually stand. The parallel to AI evals is almost uncanny.
+                    This article starts with his framework, then looks at how I apply those ideas to tools and workflows in my own work. The central lesson applies whether the system serves an internal team or an external customer: generating an output is only part of the job. We also need to understand its quality, investigate failures, and use that evidence to make the next version better.
                 </p>
 
-                <h2>What Evals Are and Why They Matter</h2>
+                <h2>Andrew Ng's Four Agentic Design Patterns</h2>
                 <p>
-                    Evaluations are systematic methods for measuring whether an AI system does what it should. There are three core types: code-based evals that programmatically verify outputs against known correct answers, human evaluations where people assess quality and nuance, and LLM-as-judge evals that use one model to assess another's reasoning and outputs.
+                    Ng describes four patterns for building agentic AI: reflection, tool use, planning, and multi-agent collaboration. Together, they provide a useful vocabulary for understanding how an AI system can move beyond a single response and work through a task.
+                </p>
+                <h3>Reflection</h3>
+                <p>
+                    Reflection introduces a review-and-revision step. Instead of treating its first output as finished, the system critiques that output and uses the feedback to produce another version.
                 </p>
                 <p>
-                    If you've ever facilitated a heuristic evaluation on a UI or run a structured design critique, this logic is already in your bones. You define what "good" looks like, then you measure the work against that standard. Evals are the same discipline, applied to a different medium.
+                    For a report, that could mean generating a draft, reviewing it against specific requirements, and revising sections that are incomplete or unsupported. The review becomes more useful when it has something concrete to work against, such as source material, required sections, or examples of acceptable work.
                 </p>
                 <p>
-                    The mistake most teams make is treating evaluation as a launch gate, a one-time checkpoint. That's like running a single usability test and calling the product done. Systems that hold up under real conditions need continuous evaluation, the same way products that serve real users need ongoing research.
+                    The evaluation question is whether the revision actually improves the result. I would compare the initial and revised outputs against the same criteria, including whether the revision introduces new problems. A second draft should not receive a better score simply because it is longer or sounds more confident.
                 </p>
-
-                <h2>Ng's Four Agentic Patterns (And Where They Break)</h2>
+                <h3>Tool Use</h3>
                 <p>
-                    Andrew Ng's framework identifies four design patterns for agentic AI. Each one creates specific failure modes, which is exactly why each one needs its own evaluation strategy.
-                </p>
-                <p>
-                    <strong>Reflection</strong> is built-in self-critique: an agent reviews its own output and refines it before responding. Research from DeepLearning.AI demonstrates that GPT-3.5 with agentic techniques like reflection can score in the high 70s to 90s on coding benchmarks, matching or exceeding GPT-4's zero-shot performance. The system architecture outweighs the raw model. But reflection without evals is just an agent agreeing with itself.
+                    Tool use allows a model to interact with resources outside the model itself. That might involve searching for information, querying a database, executing code, or interacting with another application.
                 </p>
                 <p>
-                    <strong>Tool use</strong> lets agents call APIs, execute code, search databases, and verify information against external sources. Every tool call is a potential failure point: a timeout, a malformed query, a hallucinated function name. These need targeted evals.
+                    This changes what we need to evaluate. For a research tool, I would want to know whether it selected the right source, retrieved the relevant material, and used that material correctly. A successful connection to a database is not the same as finding the information needed to answer the question.
                 </p>
                 <p>
-                    <strong>Planning</strong> is task decomposition at the system level: an LLM breaking a complex request into subtasks before executing. It's the same muscle a product strategist uses when scoping a workstream, and I lean on it constantly. But without evaluation on the planning step itself, an agent can flawlessly execute a plan that was wrong from the start.
+                    This distinction helps make failures more specific. If the output is missing evidence, the problem might be the search query, the material returned, or the interpretation of that material. Each suggests a different intervention.
+                </p>
+                <h3>Planning</h3>
+                <p>
+                    Planning gives the model responsibility for breaking a task into steps and adapting those steps as it proceeds. In a fixed workflow, the developer defines the sequence. In a more dynamic workflow, the model makes some of those decisions based on the task and the results it encounters.
                 </p>
                 <p>
-                    <strong>Multi-agent collaboration</strong> distributes work across specialized agents: one researches, one drafts, one reviews. The parallel to cross-functional teams is obvious, and so is the governance challenge. Every handoff between agents is a seam where quality can slip.
-                </p>
-
-                <h2>Observability and Human Review</h2>
-                <p>
-                    Evals work best alongside observability, which means recording what the system does at each step: the input it received, the plan it made, the tools it called, and what came back. With those records, you can find the step where a failure started and fix that step instead of guessing from the final output. This works for any AI system, whether it is an internal research tool, a customer-facing assistant, or a multi-step agent.
+                    For a research assignment, a plan might involve identifying the question, locating relevant evidence, checking for gaps, and deciding how to organize the findings.
                 </p>
                 <p>
-                    In an agentic system, I put two kinds of evaluation in the loop. Automated evals, including code checks and LLM-as-judge scoring, run on every output and flag problems at a volume no person could review. Human evals cover the cases where judgment matters most, and those human decisions become the reference the automated evals are calibrated against. Each failure a person catches becomes a new test case, so the automated layer improves over time.
+                    I would evaluate whether that plan addresses the actual request, includes necessary checks, and responds appropriately when information is missing. A system can execute its steps successfully while still failing the overall task because the plan left out something important.
+                </p>
+                <h3>Multi-Agent Collaboration</h3>
+                <p>
+                    Multi-agent collaboration distributes responsibilities across specialized agents. One might gather information, another develop the output, and another review it. These agents can also use tools, plan their work, and revise their outputs.
                 </p>
                 <p>
-                    This setup helps with AI research tools, where every synthesized insight should trace back to the source transcripts. It helps with external tools too, where a wrong answer can reach a customer before anyone on the team sees it. In both cases, the step records show where to make the change and the evals show whether the change worked.
+                    For this arrangement, I would evaluate the handoffs as well as the individual contributions. Did the drafting agent receive the supporting evidence? Did the reviewer receive the original requirements? Did an important qualification disappear between stages?
                 </p>
-
-                <h2>A Framework for Evaluation-Driven Development</h2>
                 <p>
-                    This is the evaluation process I use when building AI tools. It works for a single-prompt feature and for a multi-agent system, and each step builds on the one before it.
-                </p>
-
-                <h3>1. Start with failure modes</h3>
-                <p>
-                    Before you build, list the three worst outputs your system could produce, such as a wrong number in a report, an answer that cites a source it never read, or an action taken without approval. Write evals for those three first, because they are the failures that cost users the most.
+                    I treat these four patterns as design options, not a checklist that every tool must satisfy. Adding another agent or another review step should address an observed problem. The evaluation should help determine whether the additional complexity is worthwhile.
                 </p>
 
-                <h3>2. Layer your eval types</h3>
+                <h2>Evaluation Tells Us What Works. Observability Helps Explain What Happened.</h2>
                 <p>
-                    Use code-based checks for anything with a verifiable answer, such as a required field, a date format, or a total that has to match. Use LLM-as-judge scoring for open-ended qualities like tone, completeness, and relevance. Use human review for the highest-stakes cases, and use those human decisions to calibrate the automated layers.
+                    An important part of Ng's course is the attention given to evaluations, error analysis, and component-level testing. The design patterns describe ways to organize the work. Evaluation helps determine whether that organization is producing the intended result.
+                </p>
+                <p>
+                    An evaluation is a structured assessment against defined criteria. For a presentation tool, those criteria might include required content, factual support, formatting, and suitability for the audience. An end-to-end evaluation examines the finished deliverable. A component-level evaluation isolates a particular part of the workflow, such as retrieval or slide generation.
+                </p>
+                <p>
+                    Observability provides the records needed to investigate performance. Traces show what the system did, allowing a team to inspect a run rather than infer everything from the final answer. They also provide material for debugging and future evaluation cases.
+                </p>
+                <p>
+                    For the systems I build, I want to preserve enough information to answer practical questions: what input did the system receive, which references did it access, what did its tools return, and what did it produce at the important stages?
+                </p>
+                <p>
+                    Suppose a presentation is missing a required section. The source material may never have reached the model. The outline may have omitted the section. Or the content may have been generated correctly but lost during slide creation. The final presentation reveals the problem, but the intermediate records help locate it.
+                </p>
+                <p>
+                    Different evaluation methods serve different purposes. Code-based checks can verify required fields or calculations. Model-based evaluations can assess outputs against a rubric. Human reviewers help establish the standard, resolve difficult judgments, and check whether automated scoring agrees with expert assessment.
+                </p>
+                <p>
+                    The goal is to combine these methods around the work that matters, rather than ask one score to explain the entire system.
                 </p>
 
-                <h3>3. Evaluate each step, not only the final output</h3>
+                <h2>Applying This to a Research Presentation Tool</h2>
                 <p>
-                    In a multi-step workflow, a well-written final answer can hide a wrong plan or a failed tool call earlier in the chain. Evaluate the plan, each tool call, and the intermediate results along with what the user sees. The step records from your observability setup make this possible.
+                    I encountered this directly while building a presentation tool to streamline the user research process.
+                </p>
+                <p>
+                    The early output was not particularly good. It was missing components, and its formatting and content did not consistently match what we needed. The immediate reaction could have been that AI was not ready for the task.
+                </p>
+                <p>
+                    Instead, I edited the presentation and placed the revised version somewhere the system could access it. That created a comparison between what the system generated and what I actually used.
+                </p>
+                <p>
+                    The comparison made our expectations more concrete. We could examine what needed to be added, what needed to be reorganized, and how the presentation needed to change to fit our standards. It gave the system examples of our content and formatting preferences, rather than relying entirely on instructions written in advance.
+                </p>
+                <p>
+                    Over time, we used those differences to refine the workflow and bring the output closer to what we wanted.
+                </p>
+                <p>
+                    For me, the important lesson was not that every weak output can be fixed through configuration. It was that the first output did not give us enough evidence to conclude that the model was the limiting factor. We needed a way to inspect the gaps and address them systematically.
                 </p>
 
-                <h3>4. Turn production failures into test cases</h3>
+                <h2>Turning the Difference Between "Generated" and "Used" Into Feedback</h2>
                 <p>
-                    When the system fails in real use, add that case to your eval suite. Over time, the suite becomes a record of every failure you have seen, and rerunning it before each change shows whether an old problem has come back.
+                    A related approach we have used is a shared feedback log.
+                </p>
+                <p>
+                    The system generates a draft, and a person edits it into the version they actually use. The workflow retrieves both versions, compares them, and records the differences. Once a week, an automated AI review reads the log to identify recurring changes and nuances.
+                </p>
+                <p>
+                    The log is also available to the people responsible for the work. Authorized team members can review the comparisons, correct the AI's interpretation, and add their own feedback.
+                </p>
+                <p>
+                    This creates a useful combination of automated collection and human judgment. The system can capture changes without requiring someone to document every edit manually. People can then explain the decisions that a comparison alone may not reveal.
+                </p>
+                <p>
+                    For example, an added section might indicate that the original draft was incomplete. It might also reflect a requirement introduced after the draft was generated. A change in tone might express a company-wide preference or a choice specific to one audience.
+                </p>
+                <p>
+                    Those differences matter. I would not want the system to turn every edit into a universal instruction.
+                </p>
+                <p>
+                    To make the log useful for evaluation, I would record the type of change, its significance, and the reviewer's explanation where available. Content corrections, missing components, tone adjustments, and formatting changes should remain distinguishable. A factual correction deserves different attention from a preference about heading style.
+                </p>
+                <p>
+                    I would also keep quality judgments separate from the amount of editing. A draft that needs few changes may be useful, but acceptance alone does not establish that its claims are correct. The original evidence and the agreed criteria still matter.
                 </p>
 
-                <h3>5. Define "good" with the people who use the output</h3>
+                <h2>Closing the Loop Requires More Than Collecting Feedback</h2>
                 <p>
-                    Engineers can tell whether a tool call worked, domain experts know whether an answer is correct, and end users know whether it helps them do their work. Bring all three into writing the eval criteria and reviewing results, so the evals measure what the people relying on the system care about.
+                    The weekly review creates an opportunity for improvement. The next step is to decide what should change.
+                </p>
+                <p>
+                    Recurring findings can inform revised instructions, updated templates, better reference examples, or changes to how the system retrieves information. Those improvements then need to be available to future runs. In this approach, we are refining the system's configuration and context, rather than retraining the underlying model.
+                </p>
+                <p>
+                    This is also where I distinguish the feedback log from Ng's reflection pattern. Reflection can improve an output during a particular task. The feedback log supports improvement across repeated uses of the workflow.
+                </p>
+                <p>
+                    For changes that affect shared standards or consequential behavior, I would have the responsible person review the proposed update before it becomes part of the system. Making a log visible supports oversight, but oversight still requires someone to review it and act.
+                </p>
+                <p>
+                    I would then test the updated workflow against representative cases, including cases separate from the examples used to develop the change. That helps distinguish a broader improvement from a fix tailored to the latest complaint. Evaluation should continue as the system changes, with new failures becoming additional test cases.
+                </p>
+                <p>
+                    This is the part I would build in upfront, even in a modest form: a record of the initial output, a clear definition of success, a way to capture corrections, and a repeatable process for checking whether changes help.
                 </p>
 
-                <h2>Getting Started</h2>
+                <h2>The Same Principle Applies to Internal and External Tools</h2>
                 <p>
-                    AI systems are moving from answering questions to completing tasks, and agents now search, compare, and take actions on behalf of users. As they take on more of that work, evals and observability let you check that each step was done correctly and find what to fix when it wasn't.
+                    The presentation example is an internal workflow, but the underlying approach is equally relevant to a customer-facing system.
                 </p>
                 <p>
-                    A first version can be small. Pick one workflow, write evals for its three worst failure modes, log each step the system takes, and have a person review a sample of outputs each week. Each failure you find becomes the next test case.
+                    For an internal drafting assistant, useful feedback might come from the final document and the corrections a colleague makes. For an external support tool, I would look at whether the issue was resolved, whether a person had to intervene, and what that person corrected.
+                </p>
+                <p>
+                    The evaluation criteria should reflect the consequences of failure, not simply whether the tool is labeled internal or external. An internal research summary can still influence an important decision.
+                </p>
+                <p>
+                    The timing of review matters too. A weekly feedback review is useful for finding patterns and improving the workflow. It should not replace checks or approvals needed before an output reaches a user or an action is taken.
+                </p>
+                <p>
+                    I would decide those controls alongside the workflow itself: what can proceed automatically, what needs review, and what evidence the reviewer needs to make that decision.
+                </p>
+
+                <h2>Configure Existing Tools Before Building New Ones</h2>
+                <p>
+                    There is another consideration: the capabilities available to teams keep changing.
+                </p>
+                <p>
+                    When I first started this work, getting a general-purpose AI chat to follow company standards, tone, and output expectations required substantial effort. In my own work, that configuration has become easier over time.
+                </p>
+                <p>
+                    Where an organization permits the relevant use, I often advise teams to thoroughly configure an existing environment before committing to a custom tool. ChatGPT and Claude both support project-specific instructions and reference material, giving teams ways to provide reusable context for their work.
+                </p>
+                <p>
+                    I would start with clear instructions, approved examples, templates, and explicit quality criteria. Then I would test the configured environment against the actual task. A custom interface should solve a remaining problem, not compensate for configuration that has not been attempted.
+                </p>
+                <p>
+                    The feedback mechanism still needs deliberate attention. I would verify how the chosen setup captures final edits, preserves useful records, and makes approved feedback available for subsequent work. I would not assume those connections exist simply because the chat has access to reference files.
+                </p>
+                <p>
+                    A substantial part of my work involves sensitive information and environments with tighter restrictions. In those situations, the starting point is what the team is approved to use, which information the system may access, and what integrations and controls are permitted.
+                </p>
+                <p>
+                    That may lead to an approved enterprise product, a custom internal implementation, or a combination of the two. Custom development still needs the appropriate review and approval. The same restrictions also need to cover feedback logs and corrected outputs, because those records may contain sensitive information.
+                </p>
+
+                <h2>Build for Improvement From the Beginning</h2>
+                <p>
+                    What makes Andrew Ng's framework such a valuable reference is that it gives us a practical way to reason about AI systems. Reflection, tool use, planning, and collaboration describe how the work can be organized. Evaluation and error analysis help us decide how that organization should change.
+                </p>
+                <p>
+                    My own experience has reinforced the importance of making those ideas part of the workflow from the beginning. Capture what the system produces. Understand what people change. Make the relevant steps inspectable. Turn recurring problems into specific improvements, then test whether those improvements hold up.
+                </p>
+                <p>
+                    For internal tools and external products alike, I want more than an impressive first demonstration. I want a system whose performance we can understand and whose improvement we can verify.
                 </p>
             </div>
 

@@ -18,7 +18,7 @@ Currently leading product research at IQVIA. Previously at Google (via Outer Lab
 ## Blog
 
 - [AI-Augmented UX Research](https://www.nathanielsteinrueck.com/blog/ai-augmented-ux-research.html): Turning research findings from one-time deliverables into living knowledge systems using AI-powered insights bots and custom research copilots
-- [Building Resilient AI Systems Through Evaluation-Driven Development](https://www.nathanielsteinrueck.com/blog/evals-design-critique.html): Connects Andrew Ng's agentic AI patterns to design critique practices
+- [Building Better AI Systems Through Evaluation-Driven Development](https://www.nathanielsteinrueck.com/blog/evals-design-critique.html): Andrew Ng's agentic AI framework applied to internal tools, customer-facing products, and continuous improvement
 
 ## Tech Stack
 

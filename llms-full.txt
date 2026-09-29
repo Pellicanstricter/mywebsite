@@ -168,10 +168,8 @@ This article covers building an AI-powered insights bot in Slack, prototyping a 
 
 URL: https://www.nathanielsteinrueck.com/blog/ai-augmented-ux-research.html
 
-### Building Resilient AI Systems Through Evaluation-Driven Development
-
-Teams building with AI often don't have a reliable way to tell whether their agent is working, so problems surface after launch. This article connects Andrew Ng's four agentic AI patterns (reflection, tool use, planning, multi-agent collaboration) to the practice of design critique and structured evaluation.
-
-Key framework: lead with failure modes, layer eval types (code-based, LLM-as-judge, human), eval the chain not just the output, grow your eval suite from production failures, and make it collaborative. The discipline of design critique transfers directly to building resilient AI systems.
+### Building Better AI Systems Through Evaluation-Driven Development
 
 URL: https://www.nathanielsteinrueck.com/blog/evals-design-critique.html
+
+Understanding Andrew Ng's agentic AI framework and applying it to internal tools, customer-facing products, and continuous improvement. Covers reflection, tool use, planning, and multi-agent collaboration; evaluation and observability; a research presentation tool improved by comparing generated and edited versions; a shared feedback log with weekly AI review and human correction; and configuring existing tools before building custom ones.
