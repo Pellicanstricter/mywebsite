@@ -238,6 +238,12 @@ body {
     margin-bottom: var(--spacing-sm);
 }
 
+.hero-inline-link {
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .hero-links {
     display: flex;
     align-items: center;
